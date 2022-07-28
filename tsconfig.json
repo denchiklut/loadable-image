@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "esnext",
+		"declaration": true,
+		"declarationDir": "@types",
+		"emitDeclarationOnly": true,
+		"outDir": "dist",
+		"lib": ["esnext", "dom"],
+		"strict": true,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"jsx": "react-jsx"
+	},
+	"include": ["src/**/*"]
+}

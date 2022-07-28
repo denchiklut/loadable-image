@@ -1,0 +1,30 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+tab_width = 4
+indent_size = 4
+indent_style = tab
+max_line_length = 100
+insert_final_newline = true
+ij_continuation_indent_size = 4
+
+[*.css]
+ij_css_use_double_quotes = false
+
+[*.scss]
+ij_scss_use_double_quotes = false
+
+[*.html]
+ij_scss_use_double_quotes = false
+
+[*.ts]
+ij_typescript_enforce_trailing_comma = remove
+ij_typescript_force_semicolon_style = false
+ij_typescript_use_double_quotes = false
+
+[*.js]
+ij_javascript_enforce_trailing_comma = remove
+ij_javascript_force_semicolon_style = false
+ij_javascript_use_double_quotes = false
