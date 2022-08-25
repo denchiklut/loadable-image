@@ -4,7 +4,7 @@ export interface AsyncIMageProps {
 	src: string
 	alt?: string
 	srcSet?: string
-	objectFit?: string
+	objectFit?: CSSProperties['objectFit']
 	rootMargin?: string
 	error?: JSX.Element
 	crossOrigin?: string
@@ -13,9 +13,4 @@ export interface AsyncIMageProps {
 	referrerPolicy?: string
 	onLoad?: (event: Event) => void
 	onError?: (error: string | Event) => void
-}
-
-export type LazyProps = Omit<AsyncIMageProps, 'rootMargin' | 'loader' | 'error'> & {
-	error: JSX.Element
-	loader: JSX.Element
 }

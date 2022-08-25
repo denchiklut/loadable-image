@@ -1,7 +1,7 @@
 import { type FC, cloneElement } from 'react'
 import { InView } from 'react-intersection-observer'
-import { Placeholder, Fallback } from './styles'
-import type { AsyncIMageProps } from './types'
+import { Placeholder, Fallback, absolute } from './async-image.styles'
+import type { AsyncIMageProps } from './async-image.types'
 import { Lazy } from './lazy'
 
 export const AsyncImage: FC<AsyncIMageProps> = ({
@@ -17,7 +17,7 @@ export const AsyncImage: FC<AsyncIMageProps> = ({
 				{inView ? (
 					<Lazy {...props} error={error} loader={loader} />
 				) : (
-					cloneElement(loader, { style })
+					cloneElement(loader, { style: absolute })
 				)}
 			</Placeholder>
 		)}

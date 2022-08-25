@@ -31,4 +31,14 @@ export const absolute: CSSProperties = {
 	position: 'absolute'
 }
 
+export const Image = ({
+	objectFit = 'cover',
+	...props
+}: {
+	src: string
+	srcSet?: string
+	alt?: string
+	objectFit?: CSSProperties['objectFit']
+}) => <img style={{ ...absolute, objectFit }} {...props} />
+
 export const Fallback = <div style={{ ...absolute, backgroundColor: '#eee' }}></div>

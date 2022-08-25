@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react'
-
-export enum Status {
-	LOADING,
-	LOADED,
-	FAILED
-}
+import { Status } from './lazy.types'
 
 interface Props {
 	src: string
@@ -15,8 +10,8 @@ interface Props {
 	onError?: (error: string | Event) => void
 }
 
-export const useImage = ({ src, srcSet, crossOrigin, referrerPolicy, onLoad, onError }: Props) => {
-	const [status, setStatus] = useState<Status>(Status.LOADING)
+export const useLazy = ({ src, srcSet, crossOrigin, referrerPolicy, onLoad, onError }: Props) => {
+	const [status, setStatus] = useState(Status.LOADING)
 
 	useEffect(() => {
 		if (status === Status.LOADING) {
