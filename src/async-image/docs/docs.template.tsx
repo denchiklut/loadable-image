@@ -53,7 +53,7 @@ export const Template: Story<AsyncIMageProps> = () => {
 			<Card style={{ width: 250 }}>
 				<Title>{status}</Title>
 				<Placeholder style={{ width: 250, height: 250 }}>
-					<Fade in={status === 'loading'} timeout={1000} unmountOnExit>
+					<Fade appear={false} in={status === 'loading'} timeout={1000} unmountOnExit>
 						<Blur src='https://artist-dev.s3.amazonaws.com/4cbf2f96-926e-46d2-b2ef-1af6942b1a49/thumbnail320x320_loader.jpeg' />
 					</Fade>
 
@@ -64,7 +64,7 @@ export const Template: Story<AsyncIMageProps> = () => {
 						/>
 					</Fade>
 
-					<Fade in={status === 'failed'} timeout={1000}>
+					<Fade in={status === 'failed'} timeout={1000} mountOnEnter unmountOnExit>
 						<Error style={absolute}>
 							<p>broken image</p>
 						</Error>
