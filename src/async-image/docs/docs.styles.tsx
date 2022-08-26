@@ -31,6 +31,7 @@ export const Title = (props: { children: string }) => (
 		{...props}
 	/>
 )
+
 export const Blur = (pops: { src: string }) => (
 	<img
 		alt='...'

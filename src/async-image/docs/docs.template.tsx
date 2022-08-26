@@ -12,44 +12,48 @@ export const Template: Story<AsyncIMageProps> = () => {
 
 	return (
 		<Stack direction='row' style={{ gap: 20, alignItems: 'start' }}>
-			<fieldset style={{ minWidth: 100 }}>
+			<fieldset
+				style={{
+					gap: 8,
+					minWidth: 130,
+					borderRadius: 4,
+					outline: 'none',
+					border: '1px solid #808080',
+					display: 'grid',
+					padding: 12
+				}}
+			>
 				<legend>STATE:</legend>
 
-				<div>
-					<label>
-						<input
-							type='radio'
-							value='loaded'
-							checked={status === 'loaded'}
-							onChange={({ target }) => setStatus(target.value)}
-						/>
-						Loaded
-					</label>
-				</div>
+				<label style={{ cursor: 'pointer' }}>
+					<input
+						type='radio'
+						value='loaded'
+						checked={status === 'loaded'}
+						onChange={({ target }) => setStatus(target.value)}
+					/>
+					Loaded
+				</label>
 
-				<div>
-					<label>
-						<input
-							type='radio'
-							value='loading'
-							checked={status === 'loading'}
-							onChange={({ target }) => setStatus(target.value)}
-						/>
-						Loading
-					</label>
-				</div>
+				<label style={{ cursor: 'pointer' }}>
+					<input
+						type='radio'
+						value='loading'
+						checked={status === 'loading'}
+						onChange={({ target }) => setStatus(target.value)}
+					/>
+					Loading
+				</label>
 
-				<div>
-					<label>
-						<input
-							type='radio'
-							value='failed'
-							checked={status === 'failed'}
-							onChange={({ target }) => setStatus(target.value)}
-						/>
-						Failed
-					</label>
-				</div>
+				<label style={{ cursor: 'pointer' }}>
+					<input
+						type='radio'
+						value='failed'
+						checked={status === 'failed'}
+						onChange={({ target }) => setStatus(target.value)}
+					/>
+					Failed
+				</label>
 			</fieldset>
 
 			<Card style={{ width: 250 }}>
@@ -65,7 +69,12 @@ export const Template: Story<AsyncIMageProps> = () => {
 
 					<Fade in={status === 'failed'} timeout={1000} mountOnEnter unmountOnExit>
 						<Error style={absolute}>
-							<p>broken image</p>
+							<span
+								className='material-symbols-rounded'
+								style={{ fontSize: 108, color: 'whitesmoke' }}
+							>
+								image_not_supported
+							</span>
 						</Error>
 					</Fade>
 				</Placeholder>
