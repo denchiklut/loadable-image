@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import { absolute } from '../async-image.styles'
 
 export const Card = ({ children, style }: { style?: CSSProperties; children: JSX.Element[] }) => (
 	<div
@@ -35,6 +36,7 @@ export const Blur = (pops: { src: string }) => (
 		alt='...'
 		{...pops}
 		style={{
+			...absolute,
 			backgroundColor: '#eee',
 			objectFit: 'cover',
 			filter: 'blur(25px)',

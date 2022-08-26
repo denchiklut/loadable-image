@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Fade } from 'transitions-kit'
 import { Story } from '@storybook/react'
-import { Image, Placeholder, absolute } from '../async-image.styles'
 import { Blur, Stack, Card, Error, Title } from './docs.styles'
+import { Image, Placeholder, absolute } from '../async-image.styles'
 import { AsyncIMageProps } from '../async-image.types'
+import loader from './images/thumbnail-loader.jpeg'
+import image from './images/thumbnail.jpeg'
 
 export const Template: Story<AsyncIMageProps> = () => {
 	const [status, setStatus] = useState('loading')
@@ -53,18 +55,15 @@ export const Template: Story<AsyncIMageProps> = () => {
 			<Card style={{ width: 250 }}>
 				<Title>{status}</Title>
 				<Placeholder style={{ width: 250, height: 250 }}>
-					<Fade in={status === 'loading'} timeout={1000} unmountOnExit>
-						<Blur src='https://artist-dev.s3.amazonaws.com/4cbf2f96-926e-46d2-b2ef-1af6942b1a49/thumbnail320x320_loader.jpeg' />
+					<Fade appear={false} in={status === 'loading'} timeout={1000} unmountOnExit>
+						<Blur src={loader} />
 					</Fade>
 
 					<Fade in={status === 'loaded'} timeout={1000}>
-						<Image
-							src='https://artist-dev.s3.amazonaws.com/4cbf2f96-926e-46d2-b2ef-1af6942b1a49/thumbnail320x320.jpeg'
-							objectFit='cover'
-						/>
+						<Image src={image} objectFit='cover' />
 					</Fade>
 
-					<Fade in={status === 'failed'} timeout={1000}>
+					<Fade in={status === 'failed'} timeout={1000} mountOnEnter unmountOnExit>
 						<Error style={absolute}>
 							<p>broken image</p>
 						</Error>

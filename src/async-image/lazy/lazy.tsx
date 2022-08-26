@@ -27,7 +27,7 @@ export const Lazy: FC<LazyProps> = ({
 
 	return (
 		<>
-			<Fade in={status === Status.LOADING} timeout={1000} unmountOnExit>
+			<Fade appear={false} in={status === Status.LOADING} timeout={1000} unmountOnExit>
 				{cloneElement(loader, { style: absolute })}
 			</Fade>
 			<Fade in={status === Status.LOADED} timeout={1000}>

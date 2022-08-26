@@ -13,9 +13,9 @@ Basic.parameters = {
 			code: `
 <AsyncImage
     src={src}
-    sx={{ width: 200, height: 200 }}
-    loader={<Loader />}
-    error={<Error />}
+    style={{ ...css }}
+    loader={<img src={lowSrc} style={{ filter: 'blur(25px)'}} />}
+    error={<div style={{ ...css }} bgcolor='#eee' />}
 />`
 		}
 	}
