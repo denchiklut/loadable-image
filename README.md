@@ -1,8 +1,16 @@
 ## loadable-image
-React Component to lazy load images
+React Component to lazy load images.
+
+### See the  [demo](https://denchiklut.github.io/loadable-image)
 
 ## Installation
- ```npm i loadable-image```
+ ```
+ npm i loadable-image
+ ```
+Or via yarn
+```
+yarn add loadable-imag
+```
 
 ## Usage example
 ##### Loader example
