@@ -9,7 +9,7 @@ React Component to lazy load images.
  ```
 Or via yarn
 ```
-yarn add loadable-imag
+yarn add loadable-image
 ```
 
 ## Usage example
