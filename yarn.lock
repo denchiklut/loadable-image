@@ -9656,10 +9656,10 @@ tr46@~0.0.3:
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
 
-transitions-kit@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/transitions-kit/-/transitions-kit-1.1.5.tgz#cee521f5017180f913e8a4f75bd4b10c7a4a4502"
-  integrity sha512-EYRUBIin9XwACa5Hx91BHXMc+rPL7kKj9APy9LXggW+Rkjc8pyef3mIiqUb1yQ3DgpcEj8Q0d6OYzTo0oRc8Og==
+transitions-kit@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/transitions-kit/-/transitions-kit-1.1.8.tgz#d884874da67ad5e14b9a2ab2b2482f9919b96304"
+  integrity sha512-n5F8Ki6rHPjtpWOVZ9FU8/+U6azTnwSsSp1wO1u9J+i606vgoVqWbORXfSzxu24lhCD2weRNadmOlAs7zGVQAg==
   dependencies:
     react-transition-group "^4.4.5"
 
