@@ -18,15 +18,24 @@ yarn add loadable-image
 ##### Loader example
 
 ```jsx
+import { forwardRef } from 'react'
 import { AsyncImage } from 'loadable-image'
 
+const Skeleton = forwardRef((props, ref) => <div ref={ref} {...props} />)
+const Error = forwardRef((props, ref) => (
+  <div ref={ref} {...props}>
+    <BrokenIcon/>
+  </div>
+))
+
 const Image = ({ src }) => (
-    <AsyncImage
-        src={src}
-        style={{ ...css }}
-        loader={<Skeleton animation='wave' />}
-        error={<div style={{ ...css }} bgcolor='#eee' />}
-    />
+  <AsyncImage
+    src={src}
+    style={style}
+    rootMargin='200px 0px' // When start loading image
+    loader={<Skeleton animation='wave' />}
+    error={<Error />}
+  />
 )
 ```
 

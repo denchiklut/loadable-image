@@ -13,6 +13,7 @@ export const Placeholder = forwardRef(({ children, style }: Props, ref) => (
 			display: 'flex',
 			overflow: 'hidden',
 			backgroundRepeat: 'no-repeat',
+			boxSizing: 'border-box',
 			backgroundSize: 'cover',
 			position: 'relative',
 			...style
@@ -28,17 +29,8 @@ export const absolute: CSSProperties = {
 	left: 0,
 	width: '100%',
 	height: '100%',
-	position: 'absolute'
+	position: 'absolute',
+	boxSizing: 'border-box'
 }
-
-export const Image = ({
-	objectFit = 'cover',
-	...props
-}: {
-	src: string
-	srcSet?: string
-	alt?: string
-	objectFit?: CSSProperties['objectFit']
-}) => <img style={{ ...absolute, objectFit }} {...props} />
 
 export const Fallback = <div style={{ ...absolute, backgroundColor: '#eee' }}></div>

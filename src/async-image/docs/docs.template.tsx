@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Fade } from 'transitions-kit'
 import { Story } from '@storybook/react'
 import { Blur, Stack, Card, Error, Title } from './docs.styles'
-import { Image, Placeholder, absolute } from '../async-image.styles'
+import { Placeholder, absolute } from '../async-image.styles'
 import { AsyncIMageProps } from '../async-image.types'
 import loader from './images/thumbnail-loader.jpeg'
 import image from './images/thumbnail.jpeg'
@@ -64,7 +64,11 @@ export const Template: Story<AsyncIMageProps> = () => {
 					</Fade>
 
 					<Fade in={status === 'loaded'} timeout={1000}>
-						<Image src={image} objectFit='cover' />
+						<img
+							src={image}
+							data-testid='loaded-image'
+							style={{ objectFit: 'cover', ...absolute }}
+						/>
 					</Fade>
 
 					<Fade in={status === 'failed'} timeout={1000} mountOnEnter unmountOnExit>

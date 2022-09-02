@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, ForwardedRef, forwardRef } from 'react'
 import { absolute } from '../async-image.styles'
 
 export const Card = ({ children, style }: { style?: CSSProperties; children: JSX.Element[] }) => (
@@ -32,33 +32,40 @@ export const Title = (props: { children: string }) => (
 	/>
 )
 
-export const Blur = (pops: { src: string }) => (
+export const Blur = forwardRef((pops: { src: string }, ref: ForwardedRef<HTMLImageElement>) => (
 	<img
 		alt='...'
 		{...pops}
+		ref={ref}
 		style={{
 			...absolute,
 			backgroundColor: '#eee',
 			objectFit: 'cover',
-			filter: 'blur(25px)',
+			filter: 'blur(20px)',
 			transform: 'scale(1)'
 		}}
 	/>
-)
+))
 
-export const Error = ({ children, style }: { style?: CSSProperties; children: JSX.Element }) => (
-	<div
-		style={{
-			background: '#bbb',
-			color: 'white',
-			display: 'grid',
-			width: '100%',
-			placeContent: 'center',
-			...style
-		}}
-	>
-		{children}
-	</div>
+export const Error = forwardRef(
+	(
+		{ children, style }: { style?: CSSProperties; children: JSX.Element },
+		ref: ForwardedRef<HTMLDivElement>
+	) => (
+		<div
+			ref={ref}
+			style={{
+				color: 'white',
+				width: '100%',
+				display: 'grid',
+				background: '#bbb',
+				placeContent: 'center',
+				...style
+			}}
+		>
+			{children}
+		</div>
+	)
 )
 
 export const Stack = ({

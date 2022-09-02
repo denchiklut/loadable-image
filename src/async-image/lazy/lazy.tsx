@@ -1,6 +1,6 @@
 import { Fade } from 'transitions-kit'
 import { type FC, cloneElement } from 'react'
-import { Image, absolute } from '../async-image.styles'
+import { absolute } from '../async-image.styles'
 import { Status, type LazyProps } from './lazy.types'
 import { useLazy } from './lazy.hooks'
 
@@ -31,11 +31,11 @@ export const Lazy: FC<LazyProps> = ({
 				{cloneElement(loader, { style: absolute })}
 			</Fade>
 			<Fade in={status === Status.LOADED} timeout={1000}>
-				<Image
-					data-testid='loaded-image'
+				<img
 					src={src}
 					srcSet={srcSet}
-					objectFit={objectFit}
+					data-testid='loaded-image'
+					style={{ objectFit, ...absolute }}
 					alt={alt}
 				/>
 			</Fade>
