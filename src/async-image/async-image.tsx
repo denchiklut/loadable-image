@@ -5,9 +5,9 @@ import type { AsyncIMageProps } from './async-image.types'
 import { Lazy } from './lazy'
 
 export const AsyncImage: FC<AsyncIMageProps> = ({
+	style = {},
 	loader = Fallback,
 	error = Fallback,
-	style = { width: '100%', height: '100%' },
 	rootMargin = '600px 0px',
 	...props
 }) => (
