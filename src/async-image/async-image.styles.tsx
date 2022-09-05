@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, MutableRefObject, forwardRef } from 'react'
+import { CSSProperties, ReactNode, Ref, forwardRef } from 'react'
 
 interface Props {
 	style?: CSSProperties
@@ -18,7 +18,7 @@ export const Placeholder = forwardRef(({ children, style }: Props, ref) => (
 			position: 'relative',
 			...style
 		}}
-		ref={ref as MutableRefObject<HTMLDivElement>}
+		ref={ref as Ref<HTMLDivElement>}
 	>
 		{children}
 	</div>

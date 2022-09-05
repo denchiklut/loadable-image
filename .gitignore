@@ -4,5 +4,6 @@
 
 .idea
 dist
+yarn.lock
 storybook-static
 node_modules
