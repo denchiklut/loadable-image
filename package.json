@@ -1,6 +1,6 @@
 {
 	"name": "loadable-image",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/denchiklut/loadable-image.git"
@@ -10,7 +10,7 @@
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm.js",
 	"module.esnext": "dist/esnext.esm.js",
-	"types": "dist/@types/index.d.ts",
+	"types": "dist/index.d.ts",
 	"files": [
 		"dist"
 	],
@@ -24,7 +24,7 @@
 	},
 	"dependencies": {
 		"react-intersection-observer": "^9.4.0",
-		"transitions-kit": "^1.1.11"
+		"transitions-kit": "^1.1.12"
 	},
 	"peerDependencies": {
 		"react": ">=16.6.0",
@@ -51,7 +51,6 @@
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-terser": "^7.0.2",
 		"storybook-dark-mode": "^1.1.0",
-		"tslib": "^2.4.0",
 		"typescript": "^4.7.4"
 	},
 	"keywords": [
