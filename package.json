@@ -1,6 +1,6 @@
 {
 	"name": "loadable-image",
-	"version": "1.2.4",
+	"version": "1.2.5",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/denchiklut/loadable-image.git"
@@ -10,7 +10,7 @@
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm.js",
 	"module.esnext": "dist/esnext.esm.js",
-	"types": "dist/index.d.ts",
+	"types": "dist/@types/index.d.ts",
 	"files": [
 		"dist"
 	],
