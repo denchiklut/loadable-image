@@ -1,6 +1,6 @@
 {
 	"name": "loadable-image",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/denchiklut/loadable-image.git"
@@ -18,13 +18,12 @@
 	"author": "Karl: ollylut@gmail.com",
 	"scripts": {
 		"build": "rm -rf dist && NODE_ENV=production && rollup -c --bundleConfigAsCjs",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
-		"deploy": "gh-pages -d storybook-static"
+		"format": "prettier --write \"src/**/*.{ts,tsx}\"",
+		"lint": "eslint --fix --quiet --ext .ts,.tsx ./"
 	},
 	"dependencies": {
 		"react-intersection-observer": "^9.4.1",
-		"transitions-kit": "^1.1.16"
+		"transitions-kit": "^1.1.17"
 	},
 	"peerDependencies": {
 		"react": ">=16.6.0",

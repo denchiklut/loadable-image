@@ -1,4 +1,4 @@
-import { AsyncIMageProps } from '../async-image.types'
+import { AsyncImageProps } from '../async-image.types'
 
 export enum Status {
 	LOADING,
@@ -6,7 +6,7 @@ export enum Status {
 	FAILED
 }
 
-export type LazyProps = Omit<AsyncIMageProps, 'rootMargin' | 'loader' | 'error'> & {
+export type LazyProps = Omit<AsyncImageProps, 'rootMargin' | 'loader' | 'error'> & {
 	error: JSX.Element
 	loader: JSX.Element
 }

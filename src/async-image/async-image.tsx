@@ -1,10 +1,10 @@
 import { type FC, cloneElement } from 'react'
 import { InView } from 'react-intersection-observer'
 import { Placeholder, Fallback, absolute } from './async-image.styles'
-import type { AsyncIMageProps } from './async-image.types'
+import type { AsyncImageProps } from './async-image.types'
 import { Lazy } from './lazy'
 
-export const AsyncImage: FC<AsyncIMageProps> = ({
+export const AsyncImage: FC<AsyncImageProps> = ({
 	style = {},
 	loader = Fallback,
 	error = Fallback,

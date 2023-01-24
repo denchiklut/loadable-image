@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactElement } from 'react'
 
-export interface AsyncIMageProps {
+export interface AsyncImageProps {
 	src: string
 	alt?: string
 	srcSet?: string
