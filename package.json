@@ -1,6 +1,6 @@
 {
 	"name": "loadable-image",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/denchiklut/loadable-image.git"
@@ -18,13 +18,12 @@
 	"author": "Karl: ollylut@gmail.com",
 	"scripts": {
 		"build": "rm -rf dist && NODE_ENV=production && rollup -c --bundleConfigAsCjs",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
-		"deploy": "gh-pages -d storybook-static"
+		"format": "prettier --write \"src/**/*.{ts,tsx}\"",
+		"lint": "eslint --fix --quiet --ext .ts,.tsx ./"
 	},
 	"dependencies": {
 		"react-intersection-observer": "^9.4.1",
-		"transitions-kit": "^1.1.16"
+		"transitions-kit": "^1.1.17"
 	},
 	"peerDependencies": {
 		"react": ">=16.6.0",
@@ -34,23 +33,18 @@
 		"@rollup/plugin-commonjs": "^24.0.1",
 		"@rollup/plugin-node-resolve": "^15.0.1",
 		"@rollup/plugin-typescript": "^11.0.0",
-		"@storybook/addon-a11y": "^6.5.15",
-		"@storybook/addon-essentials": "^6.5.15",
-		"@storybook/addon-interactions": "^6.5.15",
-		"@storybook/addon-links": "^6.5.15",
-		"@storybook/builder-webpack5": "^6.5.15",
-		"@storybook/manager-webpack5": "^6.5.15",
-		"@storybook/react": "^6.5.15",
-		"@storybook/testing-library": "^0.0.13",
 		"@types/react": "^18.0.27",
 		"@types/react-transition-group": "^4.4.5",
-		"babel-loader": "^9.1.2",
-		"gh-pages": "^5.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.49.0",
+		"@typescript-eslint/parser": "^5.49.0",
+		"eslint": "^8.32.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.1",
+		"lint-staged": "^13.1.0",
 		"prettier": "^2.8.3",
 		"rollup": "^3.10.1",
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-terser": "^7.0.2",
-		"storybook-dark-mode": "^2.0.5",
 		"typescript": "^4.9.4"
 	},
 	"keywords": [
