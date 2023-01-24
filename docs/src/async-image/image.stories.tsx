@@ -1,5 +1,5 @@
-import { AsyncImage } from './index'
-import { Template } from './docs'
+import { AsyncImage } from 'loadable-image'
+import { Template } from './template'
 
 export default {
 	component: AsyncImage,

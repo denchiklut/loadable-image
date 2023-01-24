@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { Fade } from 'transitions-kit'
 import { Story } from '@storybook/react'
-import { Blur, Stack, Card, Error, Title } from './docs.styles'
-import { Placeholder, absolute } from '../async-image.styles'
-import { AsyncIMageProps } from '../async-image.types'
+import { Blur, Stack, Card, Error, Title, Placeholder, absolute } from './styles'
+import { AsyncIMageProps } from 'loadable-image'
 import loader from './images/thumbnail-loader.jpeg'
 import image from './images/thumbnail.jpeg'
 
