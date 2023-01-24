@@ -1,6 +1,6 @@
 {
 	"name": "loadable-image",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/denchiklut/loadable-image.git"
@@ -17,41 +17,41 @@
 	"description": "React Component to lazy load images",
 	"author": "Karl: ollylut@gmail.com",
 	"scripts": {
-		"build": "rm -rf dist && NODE_ENV=production && rollup -c",
+		"build": "rm -rf dist && NODE_ENV=production && rollup -c --bundleConfigAsCjs",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"deploy": "gh-pages -d storybook-static"
 	},
 	"dependencies": {
-		"react-intersection-observer": "^9.4.0",
-		"transitions-kit": "^1.1.12"
+		"react-intersection-observer": "^9.4.1",
+		"transitions-kit": "^1.1.16"
 	},
 	"peerDependencies": {
 		"react": ">=16.6.0",
 		"react-dom": ">=16.6.0"
 	},
 	"devDependencies": {
-		"@rollup/plugin-commonjs": "^22.0.1",
-		"@rollup/plugin-node-resolve": "^13.3.0",
-		"@rollup/plugin-typescript": "^8.3.3",
-		"@storybook/addon-a11y": "^6.5.10",
-		"@storybook/addon-essentials": "^6.5.10",
-		"@storybook/addon-interactions": "^6.5.10",
-		"@storybook/addon-links": "^6.5.10",
-		"@storybook/builder-webpack5": "^6.5.10",
-		"@storybook/manager-webpack5": "^6.5.10",
-		"@storybook/react": "^6.5.10",
+		"@rollup/plugin-commonjs": "^24.0.1",
+		"@rollup/plugin-node-resolve": "^15.0.1",
+		"@rollup/plugin-typescript": "^11.0.0",
+		"@storybook/addon-a11y": "^6.5.15",
+		"@storybook/addon-essentials": "^6.5.15",
+		"@storybook/addon-interactions": "^6.5.15",
+		"@storybook/addon-links": "^6.5.15",
+		"@storybook/builder-webpack5": "^6.5.15",
+		"@storybook/manager-webpack5": "^6.5.15",
+		"@storybook/react": "^6.5.15",
 		"@storybook/testing-library": "^0.0.13",
-		"@types/react": "^18.0.15",
+		"@types/react": "^18.0.27",
 		"@types/react-transition-group": "^4.4.5",
-		"babel-loader": "^8.2.5",
-		"gh-pages": "^4.0.0",
-		"prettier": "^2.7.1",
-		"rollup": "^2.77.2",
+		"babel-loader": "^9.1.2",
+		"gh-pages": "^5.0.0",
+		"prettier": "^2.8.3",
+		"rollup": "^3.10.1",
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-terser": "^7.0.2",
-		"storybook-dark-mode": "^1.1.0",
-		"typescript": "^4.7.4"
+		"storybook-dark-mode": "^2.0.5",
+		"typescript": "^4.9.4"
 	},
 	"keywords": [
 		"react-intersection-observer",

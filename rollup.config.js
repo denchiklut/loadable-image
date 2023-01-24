@@ -5,7 +5,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
-const config = {
+export default {
 	input: 'src/index.ts',
 	output: [
 		{
@@ -34,4 +34,3 @@ const config = {
 	external: Object.keys(pkg.dependencies).concat(Object.keys(pkg.peerDependencies))
 }
 
-export default config
