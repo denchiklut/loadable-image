@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { Fade } from 'transitions-kit'
 import { Story } from '@storybook/react'
+import { AsyncImageProps } from 'loadable-image'
 import { Blur, Stack, Card, Error, Title, Placeholder, absolute } from './styles'
-import { AsyncIMageProps } from 'loadable-image'
 import loader from './images/thumbnail-loader.jpeg'
 import image from './images/thumbnail.jpeg'
 
-export const Template: Story<AsyncIMageProps> = () => {
+export const Template: Story<AsyncImageProps> = () => {
 	const [status, setStatus] = useState('loading')
 
 	return (
