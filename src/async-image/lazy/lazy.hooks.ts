@@ -21,6 +21,7 @@ export const useLazy = ({ src, srcSet, crossOrigin, referrerPolicy, onLoad, onEr
 				setStatus(Status.LOADED)
 				onLoad?.(event)
 			}
+
 			img.onerror = (error: string | Event) => {
 				setStatus(Status.FAILED)
 				onError?.(error)

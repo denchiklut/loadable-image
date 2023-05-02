@@ -1,15 +1,15 @@
 import type { CSSProperties, ReactElement } from 'react'
 
+export type Style = CSSProperties & Required<Pick<CSSProperties, 'height' | 'width'>>
 export interface AsyncImageProps {
 	src: string
 	alt?: string
 	srcSet?: string
-	objectFit?: CSSProperties['objectFit']
 	rootMargin?: string
-	error?: JSX.Element
+	error?: ReactElement
 	crossOrigin?: string
 	loader?: ReactElement
-	style?: CSSProperties
+	style: Style
 	referrerPolicy?: string
 	onLoad?: (event: Event) => void
 	onError?: (error: string | Event) => void
