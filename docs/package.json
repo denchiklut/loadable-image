@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"deploy": "gh-pages -d storybook-static",
-		"format": "prettier --write \"src/**/*.{ts,tsx}\"",
+		"format": "prettier --write \"src/**/*.{ts,tsx,mdx}\"",
 		"build-storybook": "storybook build",
 		"storybook": "storybook dev -p 6006"
 	},
@@ -16,6 +16,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.5",
+		"@storybook/addon-docs": "^7.0.7",
 		"@storybook/addon-essentials": "^7.0.7",
 		"@storybook/addon-interactions": "^7.0.7",
 		"@storybook/addon-links": "^7.0.7",

@@ -1,0 +1,13 @@
+import { Meta } from '@storybook/blocks'
+import { Controls, Canvas } from '@storybook/addon-docs'
+import * as ImageStories from './image.stories'
+
+<Meta title='LoadableImage' of={ImageStories} />
+
+# LoadableImage
+
+React Component to lazy load images. With smooth transition between `loading` / `error` states
+
+<Canvas of={ImageStories.Blur} sourceState='shown' />
+
+<Controls of={ImageStories.Blur} />
