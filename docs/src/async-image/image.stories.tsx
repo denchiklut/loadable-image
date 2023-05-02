@@ -1,22 +1,17 @@
-import { AsyncImage } from 'loadable-image'
-import { Template } from './template'
+import type { Meta } from '@storybook/react'
+import { AsyncImage as Image, AsyncImageProps } from 'loadable-image'
+import loader from './images/thumbnail-loader.jpeg'
+import image from './images/thumbnail.jpeg'
 
-export default {
-	component: AsyncImage,
-	title: 'Other/AsyncImage'
-}
+const AsyncImage = Image
+AsyncImage.displayName = 'AsyncImage'
 
-export const Basic = Template.bind({})
-Basic.parameters = {
-	docs: {
-		source: {
-			code: `
-<AsyncImage
-    src={src}
-    style={{ ...css }}
-    loader={<img src={lowSrc} style={{ filter: 'blur(25px)'}} />}
-    error={<div style={{ ...css }} bgcolor='#eee' />}
-/>`
-		}
+export default { component: AsyncImage } satisfies Meta<AsyncImageProps>
+
+export const Blur = {
+	args: {
+		src: image,
+		loader: <img src={loader} style={{ filter: 'blur(25px)' }} />,
+		style: { width: 300, height: 300, borderRadius: 3 }
 	}
 }
