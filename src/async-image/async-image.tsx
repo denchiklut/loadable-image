@@ -5,17 +5,17 @@ import type { AsyncImageProps } from './async-image.types'
 import { Lazy } from './lazy'
 
 export const AsyncImage: FC<AsyncImageProps> = ({
-	style = {},
 	loader = Fallback,
 	error = Fallback,
 	rootMargin = '600px 0px',
+	style,
 	...props
 }) => (
 	<InView rootMargin={rootMargin} triggerOnce>
 		{({ ref, inView }) => (
 			<Placeholder ref={ref} style={style}>
 				{inView ? (
-					<Lazy {...props} error={error} loader={loader} />
+					<Lazy loader={loader} error={error} objectFit={style.objectFit} {...props} />
 				) : (
 					cloneElement(loader, { style: absolute })
 				)}

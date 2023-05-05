@@ -1,15 +1,14 @@
 import { CSSProperties, ReactNode, Ref, forwardRef } from 'react'
+import type { Style } from './async-image.types'
 
 interface Props {
-	style?: CSSProperties
+	style: Style
 	children?: ReactNode
 }
 
 export const Placeholder = forwardRef(({ children, style }: Props, ref) => (
 	<div
 		style={{
-			width: '100%',
-			height: '100%',
 			display: 'flex',
 			overflow: 'hidden',
 			backgroundRepeat: 'no-repeat',
@@ -33,4 +32,4 @@ export const absolute: CSSProperties = {
 	boxSizing: 'border-box'
 }
 
-export const Fallback = <div style={{ ...absolute, backgroundColor: '#eee' }}></div>
+export const Fallback = <div style={{ ...absolute, backgroundColor: '#eee' }} />
