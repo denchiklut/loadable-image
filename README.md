@@ -15,40 +15,31 @@ yarn add loadable-image
 ```
 
 ## Usage example
-##### Loader example
 
 ```jsx
-import { forwardRef } from 'react'
 import { AsyncImage } from 'loadable-image'
 
-const Skeleton = forwardRef((props, ref) => <div ref={ref} {...props} />)
-const Error = forwardRef((props, ref) => (
-  <div ref={ref} {...props}>
-    <BrokenIcon/>
-  </div>
-))
-
-const Image = ({ src }) => (
+const Image = ({ src, lowSrc }) => (
   <AsyncImage
     src={src}
-    style={style}
-    rootMargin='200px 0px' // When start loading image
-    loader={<Skeleton animation='wave' />}
-    error={<Error />}
+    style={{ width: 100, height: 100 }}
+    loader={<img src={lowSrc} style={{ filter: 'blur(25px)'}} />}
+    error={<div style={{ background:'#eee' }}  />}
   />
 )
 ```
 
-##### Blur example
-```jsx
-import { AsyncImage } from 'loadable-image'
-
-const Image = ({ src, lowSrc, css }) => (
-    <AsyncImage
-        src={src}
-        style={{ ...css }}
-        loader={<img src={lowSrc} style={{ filter: 'blur(25px)'}} />}
-        error={<div style={{ ...css }} bgcolor='#eee' />}
-    />
-)
-```
+## Props
+| Property       | Type                                                                                            | Description                                                                                |
+|----------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| src            | `string`                                                                                        | Image source                                                                               |
+| style          | `CSSProperties` object with required `width` & `height`                                         | CSSStyleDeclaration object                                                                 |
+| rootMargin     | `string`                                                                                        | Margin around the root. Specifies when to trigger an image download.                       |
+| loader         | `JSX.Element`                                                                                   | React element to display a `loading` state.                                                |
+| error          | `JSX.Element`                                                                                   | React element to display an `error` state.                                                 |
+| alt            | `string`                                                                                        | Specifies an alternate text for an image.                                                  |
+| srcSet         | `string`                                                                                        | Comma separated list of possible image sources for the user agent  to use                  |
+| crossorigin    | `anonymous`, `use-credentials`                                                                  | Allow images from third-party sites that allow cross-origin access to be used with canvas. |
+| referrerpolicy | `no-referrer`, `no-referrer-when-downgrade`, `origin`, `origin-when-cross-origin`, `unsafe-url` | Specifies which referrer information to use when fetching an image.                        |
+| onLoad         | `(event: Event) => void`                                                                        | A callback function fires when a given resource has loaded.                                |
+| onError        | `(event: string \| Event) => void`                                                              | A callback function fires when an error occurs while attempting to load the image.         | 
