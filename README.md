@@ -41,5 +41,5 @@ const Image = ({ src, lowSrc }) => (
 | srcSet         | `string`                                                                                        | Comma separated list of possible image sources for the user agent  to use                  |
 | crossorigin    | `anonymous`, `use-credentials`                                                                  | Allow images from third-party sites that allow cross-origin access to be used with canvas. |
 | referrerpolicy | `no-referrer`, `no-referrer-when-downgrade`, `origin`, `origin-when-cross-origin`, `unsafe-url` | Specifies which referrer information to use when fetching an image.                        |
-| onLoad         | `(event: Event) => void`                                                                        | A callback function fires when a given resource has loaded.                                |
+| onLoad         | `(event: Event) => void`                                                                        | A callback function fires when the image resource is loaded.                               |
 | onError        | `(event: string \| Event) => void`                                                              | A callback function fires when an error occurs while attempting to load the image.         | 
