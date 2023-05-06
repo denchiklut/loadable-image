@@ -17,21 +17,23 @@ Try to scroll down and see images start loading. You can also try to disconnect 
 	background: '#262626',
 	border: '1px solid',
 	overflow: 'scroll',
-	height: 300,
+	height: 450,
 }}>
-	{Array.from({ length: 20 }, (value, index) => index).map((i) => (
+	{Array.from({ length: 30 }, (value, index) => index).map((i) => (
 		<AsyncImage
-			src={ [6, 11].includes(i) ? 'badURL':`https://picsum.photos/${i < 10 ? '190' + i : '19' + i}`}
-			style={{ width: 150, height: 150, borderRadius: 3 }}
+			src={ [6, 11].includes(i) ? 'badURL':`https://picsum.photos/${i < 10 ? '86' + i : '6' + i}`}
+			style={{ width: 200, height: 200, borderRadius: 3 }}
 			loader={<div style={{background: '#888'}}/>}
 		/>
 	))}
 </div>
 
 ```tsx
+import { AsyncImage } from 'loadable-image'
+...
 <AsyncImage
   src='https://picsum.photos/1900'
-  style={{ width: 150, height: 150}}
+  style={{ width: 150, height: 150 }}
   loader={<div style={{ background: '#888' }}/>}
 />
 
