@@ -28,7 +28,7 @@ export const Lazy: FC<LazyProps> = ({
 	return (
 		<>
 			<Fade appear={false} in={status === Status.LOADING} timeout={1000} unmountOnExit>
-				{cloneElement(loader, { style: absolute })}
+				{cloneElement(loader, { style: { ...loader.props.style, ...absolute } })}
 			</Fade>
 			<Fade in={status === Status.LOADED} timeout={1000}>
 				<img
@@ -40,7 +40,7 @@ export const Lazy: FC<LazyProps> = ({
 				/>
 			</Fade>
 			<Fade in={status === Status.FAILED} timeout={1000} mountOnEnter unmountOnExit>
-				{cloneElement(error, { style: absolute })}
+				{cloneElement(error, { style: { ...error.props.style, ...absolute } })}
 			</Fade>
 		</>
 	)

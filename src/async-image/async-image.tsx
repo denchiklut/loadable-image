@@ -17,7 +17,7 @@ export const AsyncImage: FC<AsyncImageProps> = ({
 				{inView ? (
 					<Lazy loader={loader} error={error} objectFit={style.objectFit} {...props} />
 				) : (
-					cloneElement(loader, { style: absolute })
+					cloneElement(loader, { style: { ...loader.props.style, ...absolute } })
 				)}
 			</Placeholder>
 		)}
