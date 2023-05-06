@@ -1,12 +1,47 @@
 import { Meta } from '@storybook/blocks'
+import { AsyncImage } from 'loadable-image'
 import { Controls, Canvas } from '@storybook/addon-docs'
 import * as ImageStories from './image.stories'
 
 <Meta title='LoadableImage' of={ImageStories} />
 
-# LoadableImage
+# Demo
+Try to scroll down and see images start loading. You can also try to disconnect from the internet and see how error image is shown.
+<div style={{
+	gap: 4,
+	padding: 4,
+	borderRadius: 4,
+	display: 'grid',
+	justifyContent: 'start',
+	gridTemplateColumns: 'auto auto',
+	background: '#262626',
+	border: '1px solid',
+	overflow: 'scroll',
+	height: 300,
+}}>
+	{Array.from({ length: 20 }, (value, index) => index).map((i) => (
+		<AsyncImage
+			src={ [6, 11].includes(i) ? 'badURL':`https://picsum.photos/${i < 10 ? '190' + i : '19' + i}`}
+			style={{ width: 150, height: 150, borderRadius: 3 }}
+			loader={<div style={{background: '#888'}}/>}
+		/>
+	))}
+</div>
 
-React Component to lazy load images. With smooth transition between `loading` / `error` states
+```tsx
+<AsyncImage
+  src='https://picsum.photos/1900'
+  style={{ width: 150, height: 150}}
+  loader={<div style={{ background: '#888' }}/>}
+/>
 
+```
+
+## Blur effect
+To achieve blur effect you can use smaller image as a `loader`. See example below.
 <Canvas of={ImageStories.Blur} sourceState='shown' />
-<Controls of={ImageStories.Blur} />
+
+## Props
+<div style={{overflowX: 'auto'}}>
+	<Controls of={ImageStories.Blur} />
+</div>
