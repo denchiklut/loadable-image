@@ -1,10 +1,10 @@
 import { Fade } from 'transitions-kit'
 import { type FC, cloneElement } from 'react'
 import { absolute } from '../async-image.styles'
-import { Status, type LazyProps } from './lazy.types'
-import { useLazy } from './lazy.hooks'
+import { Status, type LazyProps } from './image.types'
+import { useImage } from './image.hooks'
 
-export const Lazy: FC<LazyProps> = ({
+export const Image: FC<LazyProps> = ({
 	src,
 	alt,
 	error,
@@ -16,7 +16,7 @@ export const Lazy: FC<LazyProps> = ({
 	referrerPolicy,
 	objectFit = 'cover'
 }) => {
-	const { status } = useLazy({
+	const { status } = useImage({
 		src,
 		srcSet,
 		crossOrigin,

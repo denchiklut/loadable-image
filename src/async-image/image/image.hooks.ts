@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Status } from './lazy.types'
+import { Status } from './image.types'
 
 interface Props {
 	src: string
@@ -10,19 +10,19 @@ interface Props {
 	onError?: (error: string | Event) => void
 }
 
-export const useLazy = ({ src, srcSet, crossOrigin, referrerPolicy, onLoad, onError }: Props) => {
+export const useImage = ({ src, srcSet, crossOrigin, referrerPolicy, onLoad, onError }: Props) => {
 	const [status, setStatus] = useState(Status.LOADING)
 
 	useEffect(() => {
 		if (status === Status.LOADING) {
 			const img = new Image()
 
-			img.onload = (event: Event) => {
+			img.onload = event => {
 				setStatus(Status.LOADED)
 				onLoad?.(event)
 			}
 
-			img.onerror = (event: string | Event) => {
+			img.onerror = event => {
 				setStatus(Status.FAILED)
 				onError?.(event)
 			}
