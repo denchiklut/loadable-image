@@ -13,7 +13,7 @@ export default {
 		style: { description: 'CSSStyleDeclaration object.' },
 		rootMargin: {
 			type: 'string',
-			defaultValue: '600px 0px',
+			table: { defaultValue: { summary: '600px 0px' } },
 			description: 'Margin around the root. Specifies when to trigger an image download.'
 		},
 		loader: {
