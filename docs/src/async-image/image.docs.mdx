@@ -9,20 +9,19 @@ import * as ImageStories from './image.stories'
 Try to scroll down and see images start loading. You can also try to disconnect from the internet and see how error image is shown.
 <div style={{
 	gap: 4,
-	padding: 4,
+	padding: 16,
 	borderRadius: 4,
 	display: 'grid',
-	justifyContent: 'start',
+	justifyContent: 'center',
 	gridTemplateColumns: 'auto auto',
 	background: '#262626',
-	border: '1px solid',
 	overflow: 'scroll',
 	height: 450,
 }}>
 	{Array.from({ length: 30 }, (value, index) => index).map((i) => (
 		<AsyncImage
 			src={ [6, 11].includes(i) ? 'badURL':`https://picsum.photos/${i < 10 ? '86' + i : '6' + i}`}
-			style={{ width: 200, height: 200, borderRadius: 3 }}
+			style={{ width: 160, height: 160, borderRadius: 3 }}
 			loader={<div style={{background: '#888'}}/>}
 		/>
 	))}
@@ -36,7 +35,6 @@ import { AsyncImage } from 'loadable-image'
   style={{ width: 150, height: 150 }}
   loader={<div style={{ background: '#888' }}/>}
 />
-
 ```
 
 ## Blur effect
