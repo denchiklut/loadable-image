@@ -30,7 +30,7 @@ export const Image: FC<ImageProps> = ({
 			<Fade appear={false} in={status === Status.LOADING} timeout={1000} unmountOnExit>
 				{cloneElement(loader, { style: { ...loader.props.style, ...absolute } })}
 			</Fade>
-			<Fade in={status === Status.LOADED} timeout={1000} mountOnEnter>
+			<Fade in={status === Status.LOADED} timeout={1000}>
 				<img
 					src={src}
 					srcSet={srcSet}
