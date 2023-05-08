@@ -14,11 +14,13 @@ export const AsyncImage: FC<AsyncImageProps> = ({
 	<InView rootMargin={rootMargin} triggerOnce>
 		{({ ref, inView }) => (
 			<Placeholder ref={ref} style={style}>
-				{inView ? (
-					<Image loader={loader} error={error} objectFit={style.objectFit} {...props} />
-				) : (
-					cloneElement(loader, { style: { ...loader.props.style, ...absolute } })
-				)}
+				<Image
+					error={error}
+					loader={loader}
+					objectFit={style.objectFit}
+					inView={inView}
+					{...props}
+				/>
 			</Placeholder>
 		)}
 	</InView>
