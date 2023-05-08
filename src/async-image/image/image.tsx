@@ -1,4 +1,4 @@
-import { Fade, Blur } from 'transitions-kit'
+import { Fade } from 'transitions-kit'
 import { type FC, cloneElement } from 'react'
 import { absolute } from '../async-image.styles'
 import { Status, type ImageProps } from './image.types'
@@ -14,8 +14,7 @@ export const Image: FC<ImageProps> = ({
 	onError,
 	crossOrigin,
 	referrerPolicy,
-	objectFit = 'cover',
-	inView
+	objectFit = 'cover'
 }) => {
 	const { status } = useImage({
 		src,
@@ -23,8 +22,7 @@ export const Image: FC<ImageProps> = ({
 		crossOrigin,
 		referrerPolicy,
 		onLoad,
-		onError,
-		inView
+		onError
 	})
 
 	return (

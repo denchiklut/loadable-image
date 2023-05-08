@@ -8,22 +8,13 @@ interface Props {
 	referrerPolicy?: string
 	onLoad?: (event: Event) => void
 	onError?: (error: string | Event) => void
-	inView: boolean
 }
 
-export const useImage = ({
-	src,
-	srcSet,
-	inView,
-	crossOrigin,
-	referrerPolicy,
-	onLoad,
-	onError
-}: Props) => {
+export const useImage = ({ src, srcSet, crossOrigin, referrerPolicy, onLoad, onError }: Props) => {
 	const [status, setStatus] = useState(Status.LOADING)
 
 	useEffect(() => {
-		if (status === Status.LOADING && inView) {
+		if (status === Status.LOADING) {
 			const img = new Image()
 
 			img.onload = event => {
@@ -41,7 +32,7 @@ export const useImage = ({
 			if (crossOrigin) img.crossOrigin = crossOrigin
 			if (referrerPolicy) img.referrerPolicy = referrerPolicy
 		}
-	}, [status, src, srcSet, inView])
+	}, [status, src, srcSet])
 
 	return { status }
 }
