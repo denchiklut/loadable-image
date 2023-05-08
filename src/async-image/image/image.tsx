@@ -14,8 +14,7 @@ export const Image: FC<ImageProps> = ({
 	onError,
 	crossOrigin,
 	referrerPolicy,
-	objectFit = 'cover',
-	inView
+	objectFit = 'cover'
 }) => {
 	const { status } = useImage({
 		src,
@@ -23,8 +22,7 @@ export const Image: FC<ImageProps> = ({
 		crossOrigin,
 		referrerPolicy,
 		onLoad,
-		onError,
-		inView
+		onError
 	})
 
 	return (

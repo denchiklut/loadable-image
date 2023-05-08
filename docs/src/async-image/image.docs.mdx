@@ -20,7 +20,7 @@ Try to scroll down and see images start loading. You can also try to disconnect 
 }}>
 	{Array.from({ length: 30 }, (value, index) => index).map((i) => (
 		<AsyncImage
-			src={ [6, 11].includes(i) ? 'badURL':`https://picsum.photos/${i < 10 ? '86' + i : '6' + i}`}
+			src={ [6, 11].includes(i) ? 'badURL':`https://picsum.photos/${i < 10 ? '186' + i : '16' + i}`}
 			style={{ width: 160, height: 160, borderRadius: 3 }}
 			loader={<div style={{background: '#888'}}/>}
 		/>
