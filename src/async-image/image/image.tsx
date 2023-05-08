@@ -14,7 +14,8 @@ export const Image: FC<ImageProps> = ({
 	onError,
 	crossOrigin,
 	referrerPolicy,
-	objectFit = 'cover'
+	objectFit = 'cover',
+	inView
 }) => {
 	const { status } = useImage({
 		src,
@@ -22,7 +23,8 @@ export const Image: FC<ImageProps> = ({
 		crossOrigin,
 		referrerPolicy,
 		onLoad,
-		onError
+		onError,
+		inView
 	})
 
 	return (
@@ -30,7 +32,7 @@ export const Image: FC<ImageProps> = ({
 			<Fade appear={false} in={status === Status.LOADING} timeout={1000} unmountOnExit>
 				{cloneElement(loader, { style: { ...loader.props.style, ...absolute } })}
 			</Fade>
-			<Fade in={status === Status.LOADED} timeout={1000}>
+			<Fade in={status === Status.LOADED} timeout={1000} mountOnEnter>
 				<img
 					src={src}
 					srcSet={srcSet}

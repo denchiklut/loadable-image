@@ -11,4 +11,5 @@ export type ImageProps = Omit<AsyncImageProps, 'rootMargin' | 'loader' | 'error'
 	error: JSX.Element
 	loader: JSX.Element
 	objectFit?: CSSProperties['objectFit']
+	inView: boolean
 }
