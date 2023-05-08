@@ -35,7 +35,7 @@ const Image = ({ src, lowSrc }) => (
 |----------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | src            | `string`                                                                                        | Image source                                                                               |
 | style          | `CSSProperties` object with required `width` & `height`                                         | CSSStyleDeclaration object                                                                 |
-| rootMargin     | `string` by default: `'600px 0'`                                                                | Margin around the root. Specifies when to trigger an image download.                       |
+| rootMargin     | `string` by default: `'600px 0px'`                                                              | Margin around the root. Specifies when to trigger an image download.                       |
 | loader         | `JSX.Element`                                                                                   | React element to display a `loading` state.                                                |
 | error          | `JSX.Element`                                                                                   | React element to display an `error` state.                                                 |
 | alt            | `string`                                                                                        | Specifies an alternate text for an image.                                                  |
