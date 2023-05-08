@@ -7,8 +7,9 @@ export enum Status {
 	FAILED
 }
 
-export type LazyProps = Omit<AsyncImageProps, 'rootMargin' | 'loader' | 'error' | 'style'> & {
+export type ImageProps = Omit<AsyncImageProps, 'rootMargin' | 'loader' | 'error' | 'style'> & {
 	error: JSX.Element
 	loader: JSX.Element
 	objectFit?: CSSProperties['objectFit']
+	inView: boolean
 }
