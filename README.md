@@ -15,7 +15,7 @@ Or via yarn
 yarn add loadable-image
 ```
 
-## Usage example
+### Usage example
 
 ```jsx
 import { AsyncImage } from 'loadable-image'
@@ -30,7 +30,9 @@ const Image = ({ src, lowSrc }) => (
 )
 ```
 
-## Props: <AsyncImage /> accepts all standard props for HtmlImageElement and the following:
+### Props
+`<AsyncImage />` accepts all standard props for `HtmlImageElement` and the following:
+
 | Property   | Type                                                    | Description                                                                                |
 |------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | style      | `CSSProperties` object with required `width` & `height` | CSSStyleDeclaration object                                                                 |
