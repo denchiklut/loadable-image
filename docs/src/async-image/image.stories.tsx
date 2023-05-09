@@ -10,7 +10,7 @@ export default {
 	component: AsyncImage,
 	argTypes: {
 		src: { type: 'string', description: 'Image source.' },
-		style: { description: 'CSSStyleDeclaration object.' },
+		style: { description: 'CSSStyleDeclaration object with required: `width` & `height`' },
 		rootMargin: {
 			type: 'string',
 			table: { defaultValue: { summary: '600px 0px' } },
@@ -23,29 +23,6 @@ export default {
 		error: {
 			defaultValue: <div style={{ background: '#eee' }} />,
 			description: 'React element to display an `error` state.'
-		},
-		alt: { type: 'string', description: 'Specifies an alternate text for an image.' },
-		srcSet: {
-			type: 'string',
-			description: 'Comma separated list of possible image sources for the user agent  to use'
-		},
-		crossOrigin: {
-			type: 'string',
-			description:
-				'Allow images from third-party sites that allow cross-origin access to be used with canvas.'
-		},
-		referrerPolicy: {
-			type: 'string',
-			description: 'Specifies which referrer information to use when fetching an image.'
-		},
-		onLoad: {
-			type: 'function',
-			description: 'A callback function fires when the image resource is loaded.'
-		},
-		onError: {
-			type: 'function',
-			description:
-				'A callback function fires when an error occurs while attempting to load the image.'
 		}
 	}
 } satisfies Meta<AsyncImageProps>
@@ -53,8 +30,6 @@ export default {
 export const Blur: StoryObj<AsyncImageProps> = {
 	args: {
 		src: image,
-		onLoad: undefined,
-		onError: undefined,
 		loader: <img src={loader} style={{ filter: 'blur(25px)' }} />,
 		style: { width: 300, height: 300, borderRadius: 3 }
 	}

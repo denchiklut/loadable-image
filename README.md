@@ -30,17 +30,10 @@ const Image = ({ src, lowSrc }) => (
 )
 ```
 
-## Props
-| Property       | Type                                                                                            | Description                                                                                |
-|----------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| src            | `string`                                                                                        | Image source                                                                               |
-| style          | `CSSProperties` object with required `width` & `height`                                         | CSSStyleDeclaration object                                                                 |
-| rootMargin     | `string` by default: `'600px 0px'`                                                              | Margin around the root. Specifies when to trigger an image download.                       |
-| loader         | `JSX.Element`                                                                                   | React element to display a `loading` state.                                                |
-| error          | `JSX.Element`                                                                                   | React element to display an `error` state.                                                 |
-| alt            | `string`                                                                                        | Specifies an alternate text for an image.                                                  |
-| srcSet         | `string`                                                                                        | Comma separated list of possible image sources for the user agent  to use                  |
-| crossorigin    | `anonymous`, `use-credentials`                                                                  | Allow images from third-party sites that allow cross-origin access to be used with canvas. |
-| referrerpolicy | `no-referrer`, `no-referrer-when-downgrade`, `origin`, `origin-when-cross-origin`, `unsafe-url` | Specifies which referrer information to use when fetching an image.                        |
-| onLoad         | `(event: Event) => void`                                                                        | A callback function fires when the image resource is loaded.                               |
-| onError        | `(event: string \| Event) => void`                                                              | A callback function fires when an error occurs while attempting to load the image.         | 
+## Props: <AsyncImage /> accepts all standard props for HtmlImageElement and the following:
+| Property   | Type                                                    | Description                                                                                |
+|------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| style      | `CSSProperties` object with required `width` & `height` | CSSStyleDeclaration object                                                                 |
+| rootMargin | `string` by default: `'600px 0px'`                      | Margin around the root. Specifies when to trigger an image download.                       |
+| loader     | `ReactElement`                                          | React element to display a `loading` state.                                                |
+| error      | `ReactElement`                                          | React element to display an `error` state.                                                 |
