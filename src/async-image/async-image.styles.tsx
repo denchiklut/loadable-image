@@ -3,11 +3,13 @@ import type { Style } from './async-image.types'
 
 interface Props {
 	style: Style
+	className?: string
 	children?: ReactNode
 }
 
-export const Placeholder = forwardRef(({ children, style }: Props, ref) => (
+export const Placeholder = forwardRef(({ style, ...props }: Props, ref) => (
 	<div
+		{...props}
 		style={{
 			display: 'flex',
 			overflow: 'hidden',
@@ -18,9 +20,7 @@ export const Placeholder = forwardRef(({ children, style }: Props, ref) => (
 			...style
 		}}
 		ref={ref as Ref<HTMLDivElement>}
-	>
-		{children}
-	</div>
+	/>
 ))
 
 export const absolute: CSSProperties = {
