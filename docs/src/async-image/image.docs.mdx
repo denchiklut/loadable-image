@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/blocks'
-import { Blur, Grow } from 'transitions-kit'
+import { Blur, Grow, Slide } from 'transitions-kit'
 import { AsyncImage } from 'loadable-image'
 import { Controls, Canvas } from '@storybook/addon-docs'
 import * as ImageStories from './image.stories'
@@ -20,7 +20,7 @@ You can pass your own `Transition` as a prop to `AsyncImage` component.
 	overflow: 'scroll',
 	height: 450,
 }}>
-	<h6 style={{gridColumn: 'span 2', color: 'white'}}>Fade</h6>
+	<h5 style={{gridColumn: 'span 2', color: 'white'}}>Fade</h5>
 	{Array.from(
 		{ length: 16 },
 		(value, index) => 600 + index
@@ -33,7 +33,7 @@ You can pass your own `Transition` as a prop to `AsyncImage` component.
 		/>
 	))}
 
-	<h6 style={{gridColumn: 'span 2', color: 'white'}}>Blur</h6>
+	<h5 style={{gridColumn: 'span 2', color: 'white'}}>Blur</h5>
 	{Array.from(
 		{ length: 20 },
 		(value, index) => 640 + index
@@ -47,7 +47,7 @@ You can pass your own `Transition` as a prop to `AsyncImage` component.
 		/>
 	))}
 
-	<h6 style={{gridColumn: 'span 2', color: 'white'}}>Grow</h6>
+	<h5 style={{gridColumn: 'span 2', color: 'white'}}>Grow</h5>
 	{Array.from(
 		{ length: 16 },
 		(value, index) => 670 + index
@@ -57,6 +57,20 @@ You can pass your own `Transition` as a prop to `AsyncImage` component.
 			Transition={Grow}
 			src={ [7].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
 			style={{ width: 160, height: 160, borderRadius: 3 }}
+			loader={<div style={{background: '#888'}}/>}
+		/>
+	))}
+
+	<h5 style={{gridColumn: 'span 2', color: 'white'}}>Slide</h5>
+	{Array.from(
+		{ length: 16 },
+		(value, index) => 570 + index
+	).map((i) => (
+		<AsyncImage
+			key={i}
+			style={{ width: 160, height: 160, borderRadius: 3 }}
+			Transition={(props) => <Slide direction={i % 2 === 0 ? "right" : "left"} {...props}/>}
+			src={ [7].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
 			loader={<div style={{background: '#888'}}/>}
 		/>
 	))}
