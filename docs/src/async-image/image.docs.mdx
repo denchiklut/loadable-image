@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/blocks'
+import { Blur, Grow } from 'transitions-kit'
 import { AsyncImage } from 'loadable-image'
 import { Controls, Canvas } from '@storybook/addon-docs'
 import * as ImageStories from './image.stories'
@@ -6,7 +7,8 @@ import * as ImageStories from './image.stories'
 <Meta title='LoadableImage' of={ImageStories} />
 
 # Demo
-Try to scroll down and see images start loading. You can also try to disconnect from the internet and see how error image is shown.
+Try to scroll down and see images start loading. Notice we have  different examples of transitions: `Fade`, `Blur` and `Grow`.
+You can pass your own `Transition` as a prop to `AsyncImage` component.
 <div style={{
 	gap: 4,
 	padding: 16,
@@ -18,15 +20,63 @@ Try to scroll down and see images start loading. You can also try to disconnect 
 	overflow: 'scroll',
 	height: 450,
 }}>
-	{Array.from({ length: 30 }, (value, index) => index).map((i) => (
+	<h6 style={{gridColumn: 'span 2', color: 'white'}}>Fade</h6>
+	{Array.from(
+		{ length: 16 },
+		(value, index) => 100 + index
+	).map((i) => (
 		<AsyncImage
-			src={ [6, 11].includes(i) ? 'badURL':`https://picsum.photos/${i < 10 ? '186' + i : '16' + i}`}
+			key={i}
+			src={ [4].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
+			style={{ width: 160, height: 160, borderRadius: 3 }}
+			loader={<div style={{background: '#888'}}/>}
+		/>
+	))}
+
+	<h6 style={{gridColumn: 'span 2', color: 'white'}}>Blur</h6>
+	{Array.from(
+		{ length: 20 },
+		(value, index) => 140 + index
+	).map((i) => (
+		<AsyncImage
+			key={i}
+			Transition={Blur}
+			src={ [5].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
+			style={{ width: 160, height: 160, borderRadius: 3 }}
+			loader={<div style={{background: '#888'}}/>}
+		/>
+	))}
+
+	<h6 style={{gridColumn: 'span 2', color: 'white'}}>Grow</h6>
+	{Array.from(
+		{ length: 16 },
+		(value, index) => 170 + index
+	).map((i) => (
+		<AsyncImage
+			key={i}
+			Transition={Grow}
+			src={ [7].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
 			style={{ width: 160, height: 160, borderRadius: 3 }}
 			loader={<div style={{background: '#888'}}/>}
 		/>
 	))}
 </div>
 
+#
+## Usages examples
+`<AsyncImage />` accepts all props of `<img />` tag.
+The only requirement is to specify `width` and `height` of the image in **`style`** prop.
+```tsx
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src='https://picsum.photos/1900'
+  style={{ width: 150, height: 150 }}
+/>
+```
+
+### Custom Loader/Error
+You can pass your own `loader` and `error` components as props to `AsyncImage` component.
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
@@ -34,6 +84,55 @@ import { AsyncImage } from 'loadable-image'
   src='https://picsum.photos/1900'
   style={{ width: 150, height: 150 }}
   loader={<div style={{ background: '#888' }}/>}
+  error={<div style={{ background: '#eee' }}/>}
+/>
+```
+
+## Custom Transitions
+Under the hood `AsyncImage` uses [transitions-kit](https://github.com/denchiklut/transitions-kit) library
+it's a collection Transition components build on top of [react-transition-group](https://github.com/reactjs/react-transition-group) its a small library maintained by React team for animating between different views.
+You can pass your own `Transition` as a prop to `AsyncImage` component.
+
+### Fade transition
+By default `AsyncImage` uses `Fade` transition.
+```tsx
+import { Fade } from 'transitions-kit'
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src='https://picsum.photos/1900'
+  style={{ width: 150, height: 150 }}
+  loader={<div style={{ background: '#888' }}/>}
+  Transition={Fade}
+/>
+```
+
+### Blur transition
+Here is how you can use `Blur` transition and specify custom `radius` of the blur.
+```tsx
+import { Blur } from 'transitions-kit'
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src='https://picsum.photos/1900'
+  style={{ width: 150, height: 150 }}
+  Transition={props => <Blur radius={10} {...props}/>}
+  loader={<div style={{ background: '#888' }}/>}
+/>
+```
+
+### Other transitions
+There are plenty different already predefined Transition components such as `Grow`, `Zoom`, `Slide`, `Blur`, `Fade` etc.
+in [transitions-kit](https://github.com/denchiklut/transitions-kit). Feel free to try any of them.
+```tsx
+import { Grow } from 'transitions-kit'
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src='https://picsum.photos/1900'
+  style={{ width: 150, height: 150 }}
+  loader={<div style={{ background: '#888' }}/>}
+  Transition={Grow}
 />
 ```
 
