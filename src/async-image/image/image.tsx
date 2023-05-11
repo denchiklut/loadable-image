@@ -9,6 +9,7 @@ export const Image: FC<ImageProps> = ({
 	onLoad,
 	onError,
 	objectFit = 'cover',
+	Transition = Fade,
 	inView,
 	...imageProps
 }) => {
@@ -20,7 +21,7 @@ export const Image: FC<ImageProps> = ({
 				{cloneElement(loader, { style: { ...loader.props.style, ...absolute } })}
 			</Fade>
 			{inView && (
-				<Fade in={status === Status.LOADED} timeout={1000}>
+				<Transition in={status === Status.LOADED} timeout={1000}>
 					<img
 						{...imageProps}
 						style={{ objectFit, ...absolute }}
@@ -33,7 +34,7 @@ export const Image: FC<ImageProps> = ({
 							onError?.(event)
 						}}
 					/>
-				</Fade>
+				</Transition>
 			)}
 			<Fade in={status === Status.FAILED} timeout={1000} mountOnEnter unmountOnExit>
 				{cloneElement(error, { style: { ...error.props.style, ...absolute } })}

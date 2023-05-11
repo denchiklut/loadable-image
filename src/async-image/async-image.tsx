@@ -10,7 +10,7 @@ export const AsyncImage: FC<AsyncImageProps> = ({
 	rootMargin = '600px 0px',
 	className,
 	style,
-	...props
+	...imageProps
 }) => (
 	<InView rootMargin={rootMargin} triggerOnce>
 		{({ ref, inView }) => (
@@ -20,7 +20,7 @@ export const AsyncImage: FC<AsyncImageProps> = ({
 					loader={loader}
 					objectFit={style.objectFit}
 					inView={inView}
-					{...props}
+					{...imageProps}
 				/>
 			</Placeholder>
 		)}
