@@ -98,4 +98,5 @@ import { AsyncImage } from 'loadable-image'
 | rootMargin | `string` by default: `'600px 0px'`                      | Margin around the root. Specifies when to trigger an image download.                                                            |
 | loader     | `ReactElement`                                          | React element to display a `loading` state.                                                                                     |
 | error      | `ReactElement`                                          | React element to display an `error` state.                                                                                      |
+| sources    | `ReactElement`                                          | An array of `<source />` elements.                                                                                              |
 | Transition | `ComponentType<TransitionProps>`                        | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |

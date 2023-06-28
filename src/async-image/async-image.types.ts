@@ -13,5 +13,6 @@ export interface AsyncImageProps
 	error?: ReactElement
 	loader?: ReactElement
 	Transition?: ComponentType<TransitionProps>
+	sources?: Array<ReactElement>
 	style: Style
 }

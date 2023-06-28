@@ -10,6 +10,7 @@ export const Image: FC<ImageProps> = ({
 	onError,
 	objectFit = 'cover',
 	Transition = Fade,
+	sources,
 	inView,
 	...imageProps
 }) => {
@@ -22,18 +23,21 @@ export const Image: FC<ImageProps> = ({
 			</Fade>
 			{inView && (
 				<Transition in={status === Status.LOADED} timeout={1000}>
-					<img
-						{...imageProps}
-						style={{ objectFit, ...absolute }}
-						onLoad={event => {
-							setStatus(Status.LOADED)
-							onLoad?.(event)
-						}}
-						onError={event => {
-							setStatus(Status.FAILED)
-							onError?.(event)
-						}}
-					/>
+					<picture style={absolute}>
+						{sources}
+						<img
+							{...imageProps}
+							style={{ objectFit, ...absolute }}
+							onLoad={event => {
+								setStatus(Status.LOADED)
+								onLoad?.(event)
+							}}
+							onError={event => {
+								setStatus(Status.FAILED)
+								onError?.(event)
+							}}
+						/>
+					</picture>
 				</Transition>
 			)}
 			<Fade in={status === Status.FAILED} timeout={1000} mountOnEnter unmountOnExit>

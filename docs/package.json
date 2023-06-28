@@ -8,30 +8,30 @@
 		"storybook": "storybook dev -p 6006"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.10.8",
-		"@emotion/styled": "^11.10.8",
-		"loadable-image": "^2.2.2",
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.11.0",
+		"loadable-image": "^2.3.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"transitions-kit": "^1.2.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.21.8",
-		"@babel/preset-env": "^7.21.5",
-		"@babel/preset-typescript": "^7.21.5",
-		"@storybook/addon-docs": "^7.0.8",
-		"@storybook/addon-essentials": "^7.0.8",
-		"@storybook/addon-interactions": "^7.0.8",
-		"@storybook/addon-links": "^7.0.8",
-		"@storybook/blocks": "^7.0.8",
-		"@storybook/react": "^7.0.8",
-		"@storybook/react-webpack5": "^7.0.8",
-		"@storybook/testing-library": "^0.1.0",
-		"@types/react": "^18.2.5",
+		"@babel/core": "^7.22.5",
+		"@babel/preset-env": "^7.22.5",
+		"@babel/preset-typescript": "^7.22.5",
+		"@storybook/addon-docs": "^7.0.24",
+		"@storybook/addon-essentials": "^7.0.24",
+		"@storybook/addon-interactions": "^7.0.24",
+		"@storybook/addon-links": "^7.0.24",
+		"@storybook/blocks": "^7.0.24",
+		"@storybook/react": "^7.0.24",
+		"@storybook/react-webpack5": "^7.0.24",
+		"@storybook/testing-library": "^0.2.0",
+		"@types/react": "^18.2.14",
 		"babel-loader": "^9.1.2",
 		"gh-pages": "^5.0.0",
 		"prettier": "^2.8.8",
-		"storybook": "^7.0.8",
-		"typescript": "^5.0.4"
+		"storybook": "^7.0.24",
+		"typescript": "^5.1.5"
 	}
 }
