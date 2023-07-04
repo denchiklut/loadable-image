@@ -76,8 +76,7 @@ You can pass your own `Transition` as a prop to `AsyncImage` component.
 	))}
 </div>
 
-#
-## Usages examples
+### Usages examples
 `<AsyncImage />` accepts all props of `<img />` tag.
 The only requirement is to specify `width` and `height` of the image in **`style`** prop.
 ```tsx
@@ -99,6 +98,30 @@ import { AsyncImage } from 'loadable-image'
   style={{ width: 150, height: 150 }}
   loader={<div style={{ background: '#888' }}/>}
   error={<div style={{ background: '#eee' }}/>}
+/>
+```
+
+### WebP with fallback
+Since under the hood `<AsyncImage />` is just a `picture` element. You can pass an array of `<source />` elements as a prop. And browser will pick the first one that it supports.
+```tsx
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src="./image.jpg"
+  sources={[ <source type="image/webp" srcSet="./image.webp"/> ]}
+  style={{ width: "100%", height: "auto", aspectRatio: 16 / 9 }}
+/>
+```
+
+### Responsive image
+To make image responsive you can use `aspectRatio` property in `style` prop. This way you can specify only `width` or `height` as `100%` and the other one as `auto`.
+Note that if you support older browsers you might need to use `aspectRatio` [padding-hack](https://nikitahl.com/css-aspect-ratio).
+```tsx
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src='https://picsum.photos/1900'
+  style={{ width: "100%", height: "auto", aspectRatio: 16 / 9 }}
 />
 ```
 
