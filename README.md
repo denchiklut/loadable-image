@@ -40,6 +40,30 @@ import { AsyncImage } from 'loadable-image'
 />
 ```
 
+### WebP with fallback
+Since under the hood `<AsyncImage />` is just a `picture` element. You can pass an array of `<source />` elements as a prop. And browser will pick the first one that it supports.
+```tsx
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src="./image.jpg"
+  sources={[ <source type="image/webp" srcSet="./image.webp"/> ]}
+  style={{ width: "100%", height: "auto", aspectRatio: 16 / 9 }}
+/>
+```
+
+### Responsive image
+To make image responsive you can use `aspectRatio` property in `style` prop. This way you can specify only `width` or `height` as `100%` and the other one as `auto`.
+Note that if you support older browsers you might need to use `aspectRatio` [padding-hack](https://nikitahl.com/css-aspect-ratio).
+```tsx
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src='https://picsum.photos/1900'
+  style={{ width: "100%", height: "auto", aspectRatio: 16 / 9 }}
+/>
+```
+
 ## Custom Transitions
 Under the hood `AsyncImage` uses [transitions-kit](https://github.com/denchiklut/transitions-kit) library
 it's a collection Transition components built on top of [react-transition-group](https://github.com/reactjs/react-transition-group) its a small library maintained by **React** team for animating between different views.
