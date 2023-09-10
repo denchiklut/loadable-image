@@ -8,13 +8,12 @@ export const AsyncImage: FC<AsyncImageProps> = ({
 	loader = FallbackLoader,
 	error = FallbackError,
 	rootMargin = '600px 0px',
-	className,
 	style,
 	...imageProps
 }) => (
 	<InView rootMargin={rootMargin} triggerOnce>
 		{({ ref, inView }) => (
-			<Placeholder ref={ref} className={className} style={style}>
+			<Placeholder ref={ref} style={style}>
 				<Image
 					error={error}
 					loader={loader}

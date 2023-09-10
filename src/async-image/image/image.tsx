@@ -2,6 +2,7 @@ import { Fade } from 'transitions-kit'
 import { type FC, cloneElement, useState } from 'react'
 import { Status, type ImageProps } from './image.types'
 import { absolute } from '../async-image.styles'
+import { Sources } from './sources'
 
 export const Image: FC<ImageProps> = ({
 	error,
@@ -10,7 +11,7 @@ export const Image: FC<ImageProps> = ({
 	onError,
 	objectFit = 'cover',
 	Transition = Fade,
-	sources,
+	sources = [],
 	inView,
 	...imageProps
 }) => {
@@ -24,9 +25,11 @@ export const Image: FC<ImageProps> = ({
 			{inView && (
 				<Transition in={status === Status.LOADED} timeout={1000}>
 					<picture style={absolute}>
-						{sources}
+						<Sources sources={sources} />
+
 						<img
 							{...imageProps}
+							className='AsyncImage-image'
 							style={{ objectFit, ...absolute }}
 							onLoad={event => {
 								setStatus(Status.LOADED)

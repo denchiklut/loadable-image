@@ -7,19 +7,20 @@ interface Props {
 	children?: ReactNode
 }
 
-export const Placeholder = forwardRef(({ style, ...props }: Props, ref) => (
+export const Placeholder = forwardRef(({ style, ...props }: Props, ref: Ref<HTMLDivElement>) => (
 	<div
+		ref={ref}
 		{...props}
+		className='AsyncImage-root'
 		style={{
+			...style,
 			display: 'flex',
 			overflow: 'hidden',
 			backgroundRepeat: 'no-repeat',
 			boxSizing: 'border-box',
 			backgroundSize: 'cover',
-			position: 'relative',
-			...style
+			position: 'relative'
 		}}
-		ref={ref as Ref<HTMLDivElement>}
 	/>
 ))
 
@@ -32,9 +33,12 @@ export const absolute: CSSProperties = {
 	boxSizing: 'border-box'
 }
 
-export const FallbackLoader = <div style={{ backgroundColor: '#eee' }} />
+export const FallbackLoader = (
+	<div className='AsyncImage-loader' style={{ backgroundColor: '#eee' }} />
+)
+
 export const FallbackError = (
-	<div style={{ backgroundColor: '#eee' }}>
+	<div className='Asyncimage-error' style={{ backgroundColor: '#eee' }}>
 		<svg
 			fill='#00000061'
 			viewBox='0 0 24 24'

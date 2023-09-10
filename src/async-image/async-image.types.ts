@@ -6,13 +6,24 @@ type RootMargin = `${PX} ${PX} ${PX} ${PX}` | `${PX} ${PX} ${PX}` | `${PX} ${PX}
 
 export type Style = CSSProperties & Required<Pick<CSSProperties, 'height' | 'width'>>
 
+interface BaseSource {
+	width?: number
+	height?: number
+	media?: string
+	sizes?: string
+	type?: string
+}
+export type SourceProps =
+	| (BaseSource & { src: string; srcSet?: never })
+	| (BaseSource & { src?: never; srcSet: string })
+
 export interface AsyncImageProps
-	extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'height' | 'width'> {
+	extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'className' | 'height' | 'width'> {
 	src: string
 	rootMargin?: RootMargin
 	error?: ReactElement
 	loader?: ReactElement
 	Transition?: ComponentType<TransitionProps>
-	sources?: Array<ReactElement>
+	sources?: Array<SourceProps>
 	style: Style
 }
