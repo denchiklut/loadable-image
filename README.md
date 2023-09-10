@@ -40,7 +40,7 @@ import { AsyncImage } from 'loadable-image'
 />
 ```
 
-### Modern formats (WebP, Afif) with fallback
+### Modern formats (WebP, Avif) with fallback
 Since under the hood `<AsyncImage />` is just a `picture` element. You can pass an array of `<source />` elements as a prop. And browser will pick the first one that it supports.
 ```tsx
 import { AsyncImage } from 'loadable-image'
@@ -51,7 +51,7 @@ import { AsyncImage } from 'loadable-image'
       { type:"image/avif",  srcSet:"./image.avif" }, 
       { type:"image/webp",  srcSet:"./image.webp" } 
   ]}
-  style={{ width: "100%", height: "auto", aspectRatio: 16 / 9 }}
+  style={{ width: 200, height: 200 }}
 />
 ```
 
