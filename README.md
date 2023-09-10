@@ -40,14 +40,17 @@ import { AsyncImage } from 'loadable-image'
 />
 ```
 
-### WebP with fallback
+### Modern formats (WebP, Afif) with fallback
 Since under the hood `<AsyncImage />` is just a `picture` element. You can pass an array of `<source />` elements as a prop. And browser will pick the first one that it supports.
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
 <AsyncImage
   src="./image.jpg"
-  sources={[ <source type="image/webp" srcSet="./image.webp"/> ]}
+  sources={[ 
+      { type:"image/avif",  srcSet:"./image.avif" }, 
+      { type:"image/webp",  srcSet:"./image.webp" } 
+  ]}
   style={{ width: "100%", height: "auto", aspectRatio: 16 / 9 }}
 />
 ```
@@ -116,11 +119,11 @@ import { AsyncImage } from 'loadable-image'
 ### Props
 `<AsyncImage />` accepts all standard props for `HtmlImageElement` and the following:
 
-| Property   | Type                                                    | Description                                                                                                                     |
-|------------|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| style      | `CSSProperties` object with required `width` & `height` | CSSStyleDeclaration object                                                                                                      |
-| rootMargin | `string` by default: `'600px 0px'`                      | Margin around the root. Specifies when to trigger an image download.                                                            |
-| loader     | `ReactElement`                                          | React element to display a `loading` state.                                                                                     |
-| error      | `ReactElement`                                          | React element to display an `error` state.                                                                                      |
-| sources    | `ReactElement`                                          | An array of `<source />` elements.                                                                                              |
+| Property   | Type                                                    | Description                                                                                                                    |
+|------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| style      | `CSSProperties` object with required `width` & `height` | CSSStyleDeclaration object                                                                                                     |
+| rootMargin | `string` by default: `'600px 0px'`                      | Margin around the root. Specifies when to trigger an image download.                                                           |
+| loader     | `ReactElement`                                          | React element to display a `loading` state.                                                                                    |
+| error      | `ReactElement`                                          | React element to display an `error` state.                                                                                     |
+| sources    | `Array<SourceProps>`                                    | An array of `options` for `<source />` element.                                                                                |
 | Transition | `ComponentType<TransitionProps>`                        | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |

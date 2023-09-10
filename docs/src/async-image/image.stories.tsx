@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { AsyncImage as Image, AsyncImageProps } from 'loadable-image'
 import loader from './images/thumbnail-loader.jpeg'
-import image from './images/thumbnail.jpeg'
+import imageJpeg from './images/thumbnail.jpeg'
+import imageWebp from './images/thumbnail.webp'
 
 const AsyncImage = Image
 AsyncImage.displayName = 'AsyncImage'
@@ -10,6 +11,7 @@ export default {
 	component: AsyncImage,
 	argTypes: {
 		src: { type: 'string', description: 'Image source.' },
+		sources: { description: 'Array of `source` objects.' },
 		style: { description: 'CSSStyleDeclaration object with required: `width` & `height`' },
 		rootMargin: {
 			type: 'string',
@@ -29,8 +31,16 @@ export default {
 
 export const Blur: StoryObj<AsyncImageProps> = {
 	args: {
-		src: image,
+		src: imageJpeg,
 		loader: <img src={loader} style={{ filter: 'blur(25px)' }} />,
+		style: { width: 300, height: 300, borderRadius: 3 }
+	}
+}
+
+export const WebP: StoryObj<AsyncImageProps> = {
+	args: {
+		src: imageJpeg,
+		sources: [{ type: 'image/webp', srcSet: imageWebp }],
 		style: { width: 300, height: 300, borderRadius: 3 }
 	}
 }
