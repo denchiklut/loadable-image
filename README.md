@@ -1,9 +1,8 @@
 ## loadable-image
-
 <img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true"/>
 React Component to lazy load images.
 
-#### See the  [demo](https://denchiklut.github.io/loadable-image)
+#### Try in [CodeSandbox](https://codesandbox.io/s/loadable-image-ci4440). Or check out  this  [demo](https://denchiklut.github.io/loadable-image)
 ## Installation
  ```
  npm i loadable-image
@@ -126,6 +125,6 @@ import { AsyncImage } from 'loadable-image'
 | sources    | `Array<SourceProps>`                                    | An array of `options` for `<source />` element.                                                                                |
 | Transition | `ComponentType<TransitionProps>`                        | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |
 
-### loader & error requirements:
-- Forward the ref: The transition components require the first child element to forward its ref to the DOM node.
+### Requirements for loader & error props:
+- Forward the ref: The transition components require the first child element to forward its ref to the DOM node. This is usually done with React.forwardRef.
 - Single element: The transition components require only one child element (React.Fragment is not allowed).
