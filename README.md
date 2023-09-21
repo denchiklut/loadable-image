@@ -5,7 +5,7 @@ React Component to lazy load images.
 #### Default example
 
 #### Blur example
-<img width="200px" src="https://github.com/denchiklut/loadable-image/blob/main/public/demo.gif?raw=true"/><img width="200px" src="https://github.com/denchiklut/loadable-image/blob/main/public/loaded.gif?raw=true"/><img width="200px" src="https://github.com/denchiklut/loadable-image/blob/main/public/failed.gif?raw=true"/>
+<img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true"/>
 ## Installation
  ```
  npm i loadable-image
