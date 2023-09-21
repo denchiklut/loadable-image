@@ -127,3 +127,7 @@ import { AsyncImage } from 'loadable-image'
 | error      | `ReactElement`                                          | React element to display an `error` state.                                                                                     |
 | sources    | `Array<SourceProps>`                                    | An array of `options` for `<source />` element.                                                                                |
 | Transition | `ComponentType<TransitionProps>`                        | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |
+
+### loader & error Requirements:
+- Forward the ref: The transition components require the first child element to forward its ref to the DOM node.
+- Single element: The transition components require only one child element (React.Fragment is not allowed).
