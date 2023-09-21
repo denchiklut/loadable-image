@@ -1,11 +1,9 @@
 ## loadable-image
+
+<img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true"/>
 React Component to lazy load images.
 
-### See the  [demo](https://denchiklut.github.io/loadable-image)
-#### Default example
-
-#### Blur example
-<img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true"/>
+#### See the  [demo](https://denchiklut.github.io/loadable-image)
 ## Installation
  ```
  npm i loadable-image
