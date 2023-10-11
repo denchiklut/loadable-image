@@ -5,7 +5,6 @@
 [![npm downloads](https://img.shields.io/npm/dm/loadable-image.svg?style=for-the-badge)](https://www.npmjs.com/package/loadable-image)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/loadable-image?style=for-the-badge)](https://bundlephobia.com/result?p=loadable-image)
 [![Stars](https://img.shields.io/github/stars/denchiklut/loadable-image?style=for-the-badge)](https://github.com/denchiklut/loadable-image)
-[![License](https://img.shields.io/github/license/denchiklut/loadable-image?style=for-the-badge)]()
 [![Twitter](https://img.shields.io/twitter/follow/denchiklut?style=for-the-badge)](https://twitter.com/denchiklut)
 
 <img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true"/>
