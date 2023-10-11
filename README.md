@@ -7,9 +7,8 @@
 [![Stars](https://img.shields.io/github/stars/denchiklut/loadable-image?style=for-the-badge)](https://github.com/denchiklut/loadable-image)
 [![Twitter](https://img.shields.io/twitter/follow/denchiklut?style=for-the-badge)](https://twitter.com/denchiklut)
 
-<img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true"/>
-React Component to lazy load images.
-         
+<img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true" alt="..." /> React Component to lazy load images.
+
 [![Edit loadable-image](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/loadable-image-ci4440?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Installation
