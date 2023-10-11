@@ -1,8 +1,18 @@
 ## loadable-image
+
+[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](https://denchiklut.github.io/loadable-image/)
+[![npm version](https://img.shields.io/npm/v/loadable-image.svg?style=for-the-badge)](https://www.npmjs.com/package/loadable-image)
+[![npm downloads](https://img.shields.io/npm/dm/loadable-image.svg?style=for-the-badge)](https://www.npmjs.com/package/loadable-image)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/loadable-image?style=for-the-badge)](https://bundlephobia.com/result?p=loadable-image)
+[![Stars](https://img.shields.io/github/stars/denchiklut/loadable-image?style=for-the-badge)](https://github.com/denchiklut/loadable-image)
+[![License](https://img.shields.io/github/license/denchiklut/loadable-image?style=for-the-badge)]()
+[![Twitter](https://img.shields.io/twitter/follow/denchiklut?style=for-the-badge)](https://twitter.com/denchiklut)
+
 <img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true"/>
 React Component to lazy load images.
+         
+[![Edit loadable-image](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/loadable-image-ci4440?fontsize=14&hidenavigation=1&theme=dark)
 
-#### Try in [CodeSandbox](https://codesandbox.io/s/loadable-image-ci4440). Or check out  this  [demo](https://denchiklut.github.io/loadable-image)
 ## Installation
  ```
  npm i loadable-image
