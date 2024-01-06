@@ -11,7 +11,7 @@ export const Placeholder = forwardRef(({ style, ...props }: Props, ref: Ref<HTML
 	<div
 		ref={ref}
 		{...props}
-		className='AsyncImage-root'
+		className={`AsyncImage-root ${props.className}`.trim()}
 		style={{
 			...style,
 			display: 'flex',

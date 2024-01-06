@@ -18,7 +18,7 @@ export type SourceProps =
 	| (BaseSource & { src?: never; srcSet: string })
 
 export interface AsyncImageProps
-	extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'className' | 'height' | 'width'> {
+	extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'height' | 'width'> {
 	src: string
 	rootMargin?: RootMargin
 	error?: ReactElement
