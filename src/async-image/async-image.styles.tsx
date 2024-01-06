@@ -1,8 +1,7 @@
 import { CSSProperties, ReactNode, Ref, forwardRef } from 'react'
-import type { Style } from './async-image.types'
 
 interface Props {
-	style: Style
+	style: CSSProperties
 	className?: string
 	children?: ReactNode
 }
