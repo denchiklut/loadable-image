@@ -46,7 +46,7 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ### Modern formats (WebP, Avif) with fallback
-Since under the hood `<AsyncImage />` is just a `picture` element. You can pass an array of `<source />` elements as a prop. And browser will pick the first one that it supports.
+Since under the hood `<AsyncImage />` is just a `picture` element. You can pass an array of different `Sources` as a prop. And browser will pick the first one that it supports.
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
@@ -124,14 +124,15 @@ import { AsyncImage } from 'loadable-image'
 ### Props
 `<AsyncImage />` accepts all standard props for `HtmlImageElement` and the following:
 
-| Property   | Type                                                    | Description                                                                                                                    |
-|------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| style      | `CSSProperties` object with required `width` & `height` | CSSStyleDeclaration object                                                                                                     |
-| rootMargin | `string` by default: `'600px 0px'`                      | Margin around the root. Specifies when to trigger an image download.                                                           |
-| loader     | `ReactElement`                                          | React element to display a `loading` state.                                                                                    |
-| error      | `ReactElement`                                          | React element to display an `error` state.                                                                                     |
-| sources    | `Array<SourceProps>`                                    | An array of `options` for `<source />` element.                                                                                |
+| Property   | Type                                                    | Description                                                                                                                     |
+|------------|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| style      | `CSSProperties` object with required `width` & `height` | CSSStyleDeclaration object                                                                                                      |
+| rootMargin | `string` by default: `'600px 0px'`                      | Margin around the root. Specifies when to trigger an image download.                                                            |
+| loader     | `ReactElement`                                          | React element to display a `loading` state.                                                                                     |
+| error      | `ReactElement`                                          | React element to display an `error` state.                                                                                      |
+| sources    | `Array<SourceProps>`                                    | An array of `options` for `<source />` element.                                                                                 |
 | Transition | `ComponentType<TransitionProps>`                        | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |
+| className  | `String`                                                | NOTE: CSS from `style` object has a higher priority                                                                             |
 
 ### Requirements for loader & error props:
 - Forward the ref: The transition components require the first child element to forward its ref to the DOM node. This is usually done with React.forwardRef.
