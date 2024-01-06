@@ -8,8 +8,9 @@ export const AsyncImage: FC<AsyncImageProps> = ({
 	loader = FallbackLoader,
 	error = FallbackError,
 	rootMargin = '600px 0px',
+	objectFit = 'cover',
+	style = {},
 	className = '',
-	style,
 	...imageProps
 }) => (
 	<InView rootMargin={rootMargin} triggerOnce>
@@ -18,7 +19,7 @@ export const AsyncImage: FC<AsyncImageProps> = ({
 				<Image
 					error={error}
 					loader={loader}
-					objectFit={style.objectFit}
+					objectFit={style.objectFit ?? objectFit}
 					inView={inView}
 					{...imageProps}
 				/>

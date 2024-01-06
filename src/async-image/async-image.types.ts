@@ -4,8 +4,6 @@ import type { TransitionProps } from 'transitions-kit'
 type PX = `${number}px`
 type RootMargin = `${PX} ${PX} ${PX} ${PX}` | `${PX} ${PX} ${PX}` | `${PX} ${PX}` | `${PX}`
 
-export type Style = CSSProperties & Required<Pick<CSSProperties, 'height' | 'width'>>
-
 interface BaseSource {
 	width?: number
 	height?: number
@@ -22,8 +20,9 @@ export interface AsyncImageProps
 	src: string
 	rootMargin?: RootMargin
 	error?: ReactElement
+	objectFit?: CSSProperties['objectFit']
 	loader?: ReactElement
 	Transition?: ComponentType<TransitionProps>
 	sources?: Array<SourceProps>
-	style: Style
+	style?: CSSProperties
 }

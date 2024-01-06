@@ -22,7 +22,6 @@ yarn add loadable-image
 
 ## Usage examples
 `<AsyncImage />` accepts all props of `<img />` tag.
-The only requirement is to specify `width` and `height` of the image in **`style`** prop.
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
@@ -124,15 +123,15 @@ import { AsyncImage } from 'loadable-image'
 ### Props
 `<AsyncImage />` accepts all standard props for `HtmlImageElement` and the following:
 
-| Property   | Type                                                    | Description                                                                                                                     |
-|------------|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| style      | `CSSProperties` object with required `width` & `height` | CSSStyleDeclaration object                                                                                                      |
-| rootMargin | `string` by default: `'600px 0px'`                      | Margin around the root. Specifies when to trigger an image download.                                                            |
-| loader     | `ReactElement`                                          | React element to display a `loading` state.                                                                                     |
-| error      | `ReactElement`                                          | React element to display an `error` state.                                                                                      |
-| sources    | `Array<SourceProps>`                                    | An array of `options` for `<source />` element.                                                                                 |
-| Transition | `ComponentType<TransitionProps>`                        | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |
-| className  | `String`                                                | NOTE: CSS from `style` object has a higher priority                                                                             |
+| Property   | Type                               | Description                                                                                                                     |
+|------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| className  | `String`                           | NOTE: CSS from `style` object has a higher priority                                                                             |
+| style      | `CSSProperties`                    | CSSStyleDeclaration object                                                                                                      |
+| rootMargin | `string` by default: `'600px 0px'` | Margin around the root. Specifies when to trigger an image download.                                                            |
+| loader     | `ReactElement`                     | React element to display a `loading` state.                                                                                     |
+| error      | `ReactElement`                     | React element to display an `error` state.                                                                                      |
+| sources    | `Array<SourceProps>`               | An array of `options` for `<source />` element.                                                                                 |
+| Transition | `ComponentType<TransitionProps>`   | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |
 
 ### Requirements for loader & error props:
 - Forward the ref: The transition components require the first child element to forward its ref to the DOM node. This is usually done with React.forwardRef.
