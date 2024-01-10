@@ -1,0 +1,41 @@
+name: Cache Dependencies
+
+on:
+  workflow_call:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.17.0
+
+      - name: Check bun cache
+        uses: actions/cache@v3
+        id: bun-cache-check
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/bun.lockb') }}
+          lookup-only: true
+
+      - name: Prepare bun cache
+        uses: actions/cache@v3
+        if: steps.bun-cache-check.outputs.cache-hit != 'true'
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install Dependencies
+        if: steps.bun-cache-check.outputs.cache-hit != 'true'
+        run: bun install --frozen-lockfile
