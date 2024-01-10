@@ -15,19 +15,19 @@ jobs:
         with:
           node-version: 18.17.0
 
-      - name: Check bun cache
+      - name: Check yarn cache
         uses: actions/cache@v3
-        id: bun-cache-check
+        id: yarn-cache-check
         with:
           path: |
             node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/bun.lockb') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
           lookup-only: true
 
-      - name: Prepare bun cache
+      - name: Prepare yarn cache
         uses: actions/cache@v3
-        if: steps.bun-cache-check.outputs.cache-hit != 'true'
+        if: steps.yarn-cache-check.outputs.cache-hit != 'true'
         with:
           path: |
             node_modules
@@ -37,5 +37,5 @@ jobs:
             ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Dependencies
-        if: steps.bun-cache-check.outputs.cache-hit != 'true'
-        run: bun install --frozen-lockfile
+        if: steps.yarn-cache-check.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile

@@ -14,18 +14,18 @@ runs:
       with:
         node-version: 18.17.0
 
-    - name: Download bun cache
+    - name: Download yarn cache
       uses: actions/cache@v3
-      id: bun-cache
+      id: yarn-cache
       with:
         path: | 
           node_modules
           ~/.cache/Cypress
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/bun.lockb') }}
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-modules-
 
     - name: Install Dependencies
-      if: steps.bun-cache.outputs.cache-hit != 'true'
-      run: bun install --frozen-lockfile
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile
       shell: bash
