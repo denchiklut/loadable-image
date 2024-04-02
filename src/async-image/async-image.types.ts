@@ -1,28 +1,24 @@
-import type { CSSProperties, ReactElement, ImgHTMLAttributes, ComponentType } from 'react'
+import type {
+	CSSProperties,
+	ReactElement,
+	ImgHTMLAttributes,
+	ComponentType,
+	SourceHTMLAttributes
+} from 'react'
 import type { TransitionProps } from 'transitions-kit'
 
 type PX = `${number}px`
 type RootMargin = `${PX} ${PX} ${PX} ${PX}` | `${PX} ${PX} ${PX}` | `${PX} ${PX}` | `${PX}`
 
-interface BaseSource {
-	width?: number
-	height?: number
-	media?: string
-	sizes?: string
-	type?: string
-}
-export type SourceProps =
-	| (BaseSource & { src: string; srcSet?: never })
-	| (BaseSource & { src?: never; srcSet: string })
+export type SourceProps = Omit<SourceHTMLAttributes<HTMLSourceElement>, 'src'> & { srcSet: string }
+export type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'height' | 'width'>
 
-export interface AsyncImageProps
-	extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'height' | 'width'> {
+export interface AsyncImageProps extends ImageProps {
 	src: string
+	sources?: SourceProps[]
 	rootMargin?: RootMargin
 	error?: ReactElement
-	objectFit?: CSSProperties['objectFit']
 	loader?: ReactElement
+	objectFit?: CSSProperties['objectFit']
 	Transition?: ComponentType<TransitionProps>
-	sources?: Array<SourceProps>
-	style?: CSSProperties
 }

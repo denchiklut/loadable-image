@@ -43,9 +43,9 @@ export const Image: FC<ImageProps> = ({
 					</picture>
 				</Transition>
 			)}
-			<Fade in={status === Status.FAILED} timeout={1000} mountOnEnter unmountOnExit>
+			<Transition in={status === Status.FAILED} timeout={1000} mountOnEnter unmountOnExit>
 				{cloneElement(error, { style: { ...error.props.style, ...absolute } })}
-			</Fade>
+			</Transition>
 		</>
 	)
 }
