@@ -7,8 +7,10 @@ import * as ImageStories from './image.stories'
 <Meta title='LoadableImage' of={ImageStories} />
 
 # Demo
-Try to scroll down and see images start loading. Notice we have  different examples of transitions: `Fade`, `Blur` and `Grow`.
+
+Try to scroll down and see images start loading. Notice we have different examples of transitions: `Fade`, `Blur` and `Grow`.
 You can pass your own `Transition` as a prop to `AsyncImage` component.
+
 <div style={{
 	gap: 4,
 	padding: 16,
@@ -27,57 +29,60 @@ You can pass your own `Transition` as a prop to `AsyncImage` component.
 	).map((i) => (
 		<AsyncImage
 			key={i}
-			src={ [4].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
+			src={[607, 608].includes(i)  ? 'badURL':`https://picsum.photos/${i}`}
 			style={{ width: 160, height: 160, borderRadius: 3 }}
 			loader={<div style={{background: '#888'}}/>}
 		/>
 	))}
 
-	<h5 style={{gridColumn: 'span 2', color: 'white'}}>Blur</h5>
-	{Array.from(
-		{ length: 20 },
-		(value, index) => 640 + index
-	).map((i) => (
-		<AsyncImage
-			key={i}
-			Transition={Blur}
-			src={ [5].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
-			style={{ width: 160, height: 160, borderRadius: 3 }}
-			loader={<div style={{background: '#888'}}/>}
-		/>
-	))}
+    <h5 style={{gridColumn: 'span 2', color: 'white'}}>Blur</h5>
+    {Array.from(
+    	{ length: 20 },
+    	(value, index) => 640 + index
+    ).map((i) => (
+    	<AsyncImage
+    		key={i}
+    		Transition={Blur}
+    		src={ [647, 648].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
+    		style={{ width: 160, height: 160, borderRadius: 3 }}
+    		loader={<div style={{background: '#888'}}/>}
+    	/>
+    ))}
 
-	<h5 style={{gridColumn: 'span 2', color: 'white'}}>Grow</h5>
-	{Array.from(
-		{ length: 16 },
-		(value, index) => 670 + index
-	).map((i) => (
-		<AsyncImage
-			key={i}
-			Transition={Grow}
-			src={ [7].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
-			style={{ width: 160, height: 160, borderRadius: 3 }}
-			loader={<div style={{background: '#888'}}/>}
-		/>
-	))}
+    <h5 style={{gridColumn: 'span 2', color: 'white'}}>Grow</h5>
+    {Array.from(
+    	{ length: 16 },
+    	(value, index) => 670 + index
+    ).map((i) => (
+    	<AsyncImage
+    		key={i}
+    		Transition={Grow}
+    		src={ [677, 678].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
+    		style={{ width: 160, height: 160, borderRadius: 3 }}
+    		loader={<div style={{background: '#888'}}/>}
+    	/>
+    ))}
 
-	<h5 style={{gridColumn: 'span 2', color: 'white'}}>Slide</h5>
-	{Array.from(
-		{ length: 16 },
-		(value, index) => 570 + index
-	).map((i) => (
-		<AsyncImage
-			key={i}
-			style={{ width: 160, height: 160, borderRadius: 3 }}
-			Transition={(props) => <Slide direction={i % 2 === 0 ? "right" : "left"} {...props}/>}
-			src={ [7].includes(i) ? 'badURL':`https://picsum.photos/${i}`}
-			loader={<div style={{background: '#888'}}/>}
-		/>
-	))}
+    <h5 style={{gridColumn: 'span 2', color: 'white'}}>Slide</h5>
+    {Array.from(
+    	{ length: 16 },
+    	(value, index) => 570 + index
+    ).map((i) => (
+    	<AsyncImage
+    		key={i}
+    		style={{ width: 160, height: 160, borderRadius: 3 }}
+    		Transition={(props) => <Slide direction={i % 2 === 0 ? "right" : "left"} {...props}/>}
+    		src={ [577, 578].includes(i)  ? 'badURL':`https://picsum.photos/${i}`}
+    		loader={<div style={{background: '#888'}}/>}
+    	/>
+    ))}
+
 </div>
 
 ### Usages examples
+
 `<AsyncImage />` accepts all props of `<img />` tag.
+
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
@@ -88,7 +93,9 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ### Custom Loader/Error
+
 You can pass your own `loader` and `error` components as props to `AsyncImage` component.
+
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
@@ -101,7 +108,9 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ### Modern formats (WebP, Avif, etc) with fallback
+
 Since under the hood `<AsyncImage />` is just a `picture` element. You can pass an array of `<source />` elements as a prop. And browser will pick the first one that it supports.
+
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
@@ -116,8 +125,10 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ### Responsive image
+
 To make image responsive you can use `aspectRatio` property in `style` prop. This way you can specify only `width` or `height` as `100%` and the other one as `auto`.
 Note that if you support older browsers you might need to use `aspectRatio` [padding-hack](https://nikitahl.com/css-aspect-ratio).
+
 ```tsx
 import { AsyncImage } from 'loadable-image'
 ...
@@ -128,12 +139,15 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ## Custom Transitions
+
 Under the hood `AsyncImage` uses [transitions-kit](https://github.com/denchiklut/transitions-kit) library
 it's a collection Transition components build on top of [react-transition-group](https://github.com/reactjs/react-transition-group) its a small library maintained by React team for animating between different views.
 You can pass your own `Transition` as a prop to `AsyncImage` component.
 
 ### Fade transition
+
 By default `AsyncImage` uses `Fade` transition.
+
 ```tsx
 import { Fade } from 'transitions-kit'
 import { AsyncImage } from 'loadable-image'
@@ -147,7 +161,9 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ### Blur transition
+
 Here is how you can use `Blur` transition and specify custom `radius` of the blur.
+
 ```tsx
 import { Blur } from 'transitions-kit'
 import { AsyncImage } from 'loadable-image'
@@ -161,8 +177,10 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ### Other transitions
+
 There are plenty different already predefined Transition components such as `Grow`, `Zoom`, `Slide`, `Blur`, `Fade` etc.
 in [transitions-kit](https://github.com/denchiklut/transitions-kit). Feel free to try any of them.
+
 ```tsx
 import { Grow } from 'transitions-kit'
 import { AsyncImage } from 'loadable-image'
@@ -176,10 +194,13 @@ import { AsyncImage } from 'loadable-image'
 ```
 
 ## Blur effect
+
 To achieve blur effect you can use smaller image as a `loader`. See example below.
+
 <Canvas of={ImageStories.Blur} sourceState='shown' />
 
 ## Props
-<div style={{overflowX: 'auto'}}>
+
+<div style={{ overflowX: 'auto' }}>
 	<Controls of={ImageStories.Blur} />
 </div>
