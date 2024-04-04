@@ -23,7 +23,7 @@ export const Image: FC<ImageProps> = ({
 			</Fade>
 			{inView && (
 				<Transition in={status === Status.LOADED} timeout={1000}>
-					<picture>
+					<picture style={absolute}>
 						{sources.map(sp => (
 							<source key={sp.srcSet} {...sp} />
 						))}
