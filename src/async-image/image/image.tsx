@@ -2,7 +2,6 @@ import { Fade } from 'transitions-kit'
 import { type FC, cloneElement, useState } from 'react'
 import { Status, type ImageProps } from './image.types'
 import { absolute } from '../async-image.styles'
-import { Sources } from './sources'
 
 export const Image: FC<ImageProps> = ({
 	error,
@@ -24,8 +23,10 @@ export const Image: FC<ImageProps> = ({
 			</Fade>
 			{inView && (
 				<Transition in={status === Status.LOADED} timeout={1000}>
-					<picture style={absolute}>
-						<Sources sources={sources} />
+					<picture>
+						{sources.map(sp => (
+							<source key={sp.srcSet} {...sp} />
+						))}
 
 						<img
 							{...imageProps}
