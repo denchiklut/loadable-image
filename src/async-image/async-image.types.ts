@@ -19,6 +19,7 @@ export interface AsyncImageProps extends ImageProps {
 	rootMargin?: RootMargin
 	error?: ReactElement
 	loader?: ReactElement
+	timeout?: TransitionProps['timeout']
 	objectFit?: CSSProperties['objectFit']
 	Transition?: ComponentType<TransitionProps>
 }
