@@ -1,6 +1,6 @@
 {
 	"name": "loadable-image",
-	"version": "3.2.5",
+	"version": "3.2.6",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/denchiklut/loadable-image.git"

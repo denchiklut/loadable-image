@@ -76,6 +76,20 @@ Under the hood `AsyncImage` uses [transitions-kit](https://github.com/denchiklut
 it's a collection Transition components built on top of [react-transition-group](https://github.com/reactjs/react-transition-group) its a small library maintained by **React** team for animating between different views.
 You can pass your own `Transition` as a prop to `AsyncImage` component.
 
+### Blur transition
+Here’s how you can implement a `Blur` transition that replaces a `low-resolution image` with a `high-resolution` one
+```tsx
+import { Blur } from 'transitions-kit'
+import { AsyncImage } from 'loadable-image'
+...
+<AsyncImage
+  src='./original-image.jpg'
+  style={{ width: 150, height: 150 }}
+  Transition={props => <Blur radius={10} {...props}/>}
+  loader={<img src='./extra-small-1x1.jpg' />}
+/>
+```
+
 ### Fade transition
 By default `AsyncImage` uses `Fade` transition.
 ```tsx
@@ -87,20 +101,6 @@ import { AsyncImage } from 'loadable-image'
   style={{ width: 150, height: 150 }}
   loader={<div style={{ background: '#888' }}/>}
   Transition={Fade}
-/>
-```
-
-### Blur transition
-Here is how you can use `Blur` transition and specify custom `radius` of the blur.
-```tsx
-import { Blur } from 'transitions-kit'
-import { AsyncImage } from 'loadable-image'
-...
-<AsyncImage
-  src='https://picsum.photos/1900'
-  style={{ width: 150, height: 150 }}
-  Transition={props => <Blur radius={10} {...props}/>}
-  loader={<div style={{ background: '#888' }}/>}
 />
 ```
 
@@ -123,15 +123,16 @@ import { AsyncImage } from 'loadable-image'
 ### Props
 `<AsyncImage />` accepts all standard props for `HtmlImageElement` and the following:
 
-| Property   | Type                               | Description                                                                                                                     |
-|------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| className  | `String`                           | NOTE: CSS from `style` object has a higher priority                                                                             |
-| style      | `CSSProperties`                    | CSSStyleDeclaration object                                                                                                      |
-| rootMargin | `string` by default: `'600px 0px'` | Margin around the root. Specifies when to trigger an image download.                                                            |
-| loader     | `ReactElement`                     | React element to display a `loading` state.                                                                                     |
-| error      | `ReactElement`                     | React element to display an `error` state.                                                                                      |
-| sources    | `Array<SourceProps>`               | An array of `options` for `<source />` element.                                                                                 |
-| Transition | `ComponentType<TransitionProps>`   | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components |
+| Property   | Type                               | Description                                                                                                                             |
+|------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| className  | `String`                           | NOTE: CSS from `style` object has a higher priority                                                                                     |
+| style      | `CSSProperties`                    | CSSStyleDeclaration object                                                                                                              |
+| rootMargin | `string` by default: `'600px 0px'` | Margin around the root. Specifies when to trigger an image download.                                                                    |
+| loader     | `ReactElement`                     | React element to display a `loading` state.                                                                                             |
+| error      | `ReactElement`                     | React element to display an `error` state.                                                                                              |
+| sources    | `Array<SourceProps>`               | An array of `options` for `<source />` element.                                                                                         |
+| timeout    | `Number` or `Object`               | The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object. |
+| Transition | `ComponentType<TransitionProps>`   | Custom Transition component. Check out [transitions-kit](https://github.com/denchiklut/transitions-kit)'s predefined components         |
 
 ### Requirements for loader & error props:
 - Forward the ref: The transition components require the first child element to forward its ref to the DOM node. This is usually done with React.forwardRef.
