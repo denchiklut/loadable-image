@@ -6,7 +6,7 @@ import react from 'eslint-plugin-react'
 
 export default [
 	{
-		ignores: ['**/node_modules', '**/dist', '**/webpack']
+		ignores: ['**/node_modules', '**/dist', '**/storybook-static']
 	},
 	{
 		files: ['*.ts', '*.tsx'],

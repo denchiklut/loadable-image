@@ -1,11 +1,10 @@
 ## loadable-image
 
-[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](https://denchiklut.github.io/loadable-image/)
-[![npm version](https://img.shields.io/npm/v/loadable-image.svg?style=for-the-badge)](https://www.npmjs.com/package/loadable-image)
-[![npm downloads](https://img.shields.io/npm/dm/loadable-image.svg?style=for-the-badge)](https://www.npmjs.com/package/loadable-image)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/loadable-image?style=for-the-badge)](https://bundlephobia.com/result?p=loadable-image)
-[![Stars](https://img.shields.io/github/stars/denchiklut/loadable-image?style=for-the-badge)](https://github.com/denchiklut/loadable-image)
-[![Twitter](https://img.shields.io/twitter/follow/denchiklut?style=for-the-badge)](https://twitter.com/denchiklut)
+[![NPM Version](https://img.shields.io/npm/v/loadable-image)](https://www.npmjs.com/package/loadable-image)
+[![storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=white)](https://denchiklut.github.io/loadable-image)
+[![NPM Downloads](https://img.shields.io/npm/dw/loadable-image)](https://www.npmjs.com/package/loadable-image)
+[![GitHub Repo stars](https://img.shields.io/github/stars/denchiklut/loadable-image)](https://github.com/denchiklut/loadable-image)
+
 
 <img src="https://github.com/denchiklut/loadable-image/blob/main/public/cover.jpg?raw=true" alt="..." /> React Component to lazy load images.
 
