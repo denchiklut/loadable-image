@@ -26,8 +26,9 @@ runs:
           with:
               path: |
                   node_modules
+                  **/node_modules
                   ~/.cache/Cypress
-              key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+              key: ${{ runner.os }}-modules-${{ hashFiles('pnpm-lock.yaml') }}
               restore-keys: |
                   ${{ runner.os }}-modules-
 

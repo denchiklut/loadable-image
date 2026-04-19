@@ -1,5 +1,1 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npx lint-staged
-yarn test
+pnpm exec lint-staged

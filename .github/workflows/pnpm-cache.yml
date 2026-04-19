@@ -27,8 +27,9 @@ jobs:
               with:
                   path: |
                       node_modules
+                      **/node_modules
                       ~/.cache/Cypress
-                  key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  key: ${{ runner.os }}-modules-${{ hashFiles('pnpm-lock.yaml') }}
                   lookup-only: true
 
             - name: Prepare pnpm cache
@@ -37,10 +38,11 @@ jobs:
               with:
                   path: |
                       node_modules
+                      **/node_modules
                       ~/.cache/Cypress
-                  key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  key: ${{ runner.os }}-modules-${{ hashFiles('pnpm-lock.yaml') }}
                   restore-keys: |
-                      ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+                      ${{ runner.os }}-modules-${{ hashFiles('pnpm-lock.yaml') }}
 
             - name: Install Dependencies
               if: steps.pnpm-cache-check.outputs.cache-hit != 'true'

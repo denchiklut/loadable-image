@@ -2,16 +2,15 @@
 	"name": "docs",
 	"version": "0.0.0",
 	"scripts": {
-		"deploy": "gh-pages -d storybook-static",
 		"lint": "biome check --write --unsafe .",
 		"typecheck": "tsc -p . --noEmit",
 		"build-storybook": "storybook build",
-		"storybook": "storybook dev -p 6006"
+		"storybook": "pnpm --dir .. build && storybook dev -p 6006"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.1",
-		"loadable-image": "^3.4.1",
+		"loadable-image": "workspace:*",
 		"react": "^19.2.5",
 		"react-dom": "^19.2.5",
 		"react-router-dom": "^7.14.1",
