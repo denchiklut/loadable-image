@@ -1,7 +1,10 @@
+import { type CSSProperties, cloneElement, type FC, type ReactElement, useState } from 'react'
 import { Fade } from 'transitions-kit'
-import { type FC, cloneElement, useState } from 'react'
-import { Status, type ImageProps } from './image.types'
+
 import { absolute } from '../async-image.styles'
+import { type ImageProps, Status } from './image.types'
+
+type WithStyle = { style?: CSSProperties }
 
 export const Image: FC<ImageProps> = ({
 	error,
@@ -20,7 +23,9 @@ export const Image: FC<ImageProps> = ({
 	return (
 		<>
 			<Fade appear={false} in={status === Status.LOADING} timeout={timeout} unmountOnExit>
-				{cloneElement(loader, { style: { ...loader.props.style, ...absolute } })}
+				{cloneElement(loader as ReactElement<WithStyle>, {
+					style: { ...(loader as ReactElement<WithStyle>).props.style, ...absolute }
+				})}
 			</Fade>
 			{inView && (
 				<Transition in={status === Status.LOADED} timeout={timeout}>
@@ -46,7 +51,9 @@ export const Image: FC<ImageProps> = ({
 				</Transition>
 			)}
 			<Transition in={status === Status.FAILED} timeout={timeout} mountOnEnter unmountOnExit>
-				{cloneElement(error, { style: { ...error.props.style, ...absolute } })}
+				{cloneElement(error as ReactElement<WithStyle>, {
+					style: { ...(error as ReactElement<WithStyle>).props.style, ...absolute }
+				})}
 			</Transition>
 		</>
 	)

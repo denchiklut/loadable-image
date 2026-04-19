@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import { InView } from 'react-intersection-observer'
-import { Placeholder, FallbackLoader, FallbackError } from './async-image.styles'
+
+import { FallbackError, FallbackLoader, Placeholder } from './async-image.styles'
 import type { AsyncImageProps } from './async-image.types'
 import { Image } from './image'
 

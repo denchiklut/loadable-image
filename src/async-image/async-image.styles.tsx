@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, Ref, forwardRef } from 'react'
+import { type CSSProperties, forwardRef, type ReactNode, type Ref } from 'react'
 
 interface Props {
 	style: CSSProperties

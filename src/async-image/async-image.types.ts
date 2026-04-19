@@ -1,8 +1,8 @@
 import type {
-	CSSProperties,
-	ReactElement,
-	ImgHTMLAttributes,
 	ComponentType,
+	CSSProperties,
+	ImgHTMLAttributes,
+	ReactElement,
 	SourceHTMLAttributes
 } from 'react'
 import type { TransitionProps } from 'transitions-kit'

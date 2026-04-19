@@ -1,4 +1,5 @@
-import type { ReactElement, CSSProperties } from 'react'
+import type { CSSProperties, ReactElement } from 'react'
+
 import type { AsyncImageProps } from '../async-image.types'
 
 export enum Status {

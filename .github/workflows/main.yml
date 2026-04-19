@@ -1,31 +1,40 @@
 name: CI/CD
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
 
 jobs:
-  yarn:
-    uses: ./.github/workflows/yarn-cache.yml
+    pnpm:
+        uses: ./.github/workflows/pnpm-cache.yml
 
-  lint:
-    needs: yarn
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
+    lint:
+        needs: pnpm
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: ./.github/actions/setup
 
-      - run: yarn lint
+            - run: pnpm lint
 
-  build:
-    needs: yarn
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
+    typecheck:
+        needs: pnpm
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: ./.github/actions/setup
 
-      - run: yarn build
+            - run: pnpm typecheck
+
+    build:
+        needs: pnpm
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/setup
+
+            - run: pnpm build
