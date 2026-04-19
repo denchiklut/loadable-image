@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { AsyncImage as Image, AsyncImageProps } from 'loadable-image'
-import loader from './images/thumbnail-loader.jpeg'
+import { type AsyncImageProps, AsyncImage as Image } from 'loadable-image'
+
 import imageJpeg from './images/thumbnail.jpeg'
 import imageWebp from './images/thumbnail.webp'
+import loader from './images/thumbnail-loader.jpeg'
 
 const AsyncImage = Image
 AsyncImage.displayName = 'AsyncImage'

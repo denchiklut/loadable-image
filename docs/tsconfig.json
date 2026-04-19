@@ -8,11 +8,10 @@
 		"outDir": "dist",
 		"lib": ["esnext", "dom"],
 		"strict": true,
-		"baseUrl": ".",
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"jsx": "react-jsx"
 	}
 }
