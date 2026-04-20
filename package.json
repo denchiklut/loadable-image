@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"react-intersection-observer": "10.0.3",
-		"transitions-kit": "1.4.0"
+		"transitions-kit": "1.4.1"
 	},
 	"peerDependencies": {
 		"react": ">=16.6.0",
